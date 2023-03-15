@@ -1,0 +1,15 @@
+C:\Users\steph\OneDrive\Desktop\RPS\RPS\bin\Debug\net6.0\RPS.exe
+C:\Users\steph\OneDrive\Desktop\RPS\RPS\bin\Debug\net6.0\RPS.deps.json
+C:\Users\steph\OneDrive\Desktop\RPS\RPS\bin\Debug\net6.0\RPS.runtimeconfig.json
+C:\Users\steph\OneDrive\Desktop\RPS\RPS\bin\Debug\net6.0\RPS.dll
+C:\Users\steph\OneDrive\Desktop\RPS\RPS\bin\Debug\net6.0\RPS.pdb
+C:\Users\steph\OneDrive\Desktop\RPS\RPS\obj\Debug\net6.0\RPS.csproj.AssemblyReference.cache
+C:\Users\steph\OneDrive\Desktop\RPS\RPS\obj\Debug\net6.0\RPS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\steph\OneDrive\Desktop\RPS\RPS\obj\Debug\net6.0\RPS.AssemblyInfoInputs.cache
+C:\Users\steph\OneDrive\Desktop\RPS\RPS\obj\Debug\net6.0\RPS.AssemblyInfo.cs
+C:\Users\steph\OneDrive\Desktop\RPS\RPS\obj\Debug\net6.0\RPS.csproj.CoreCompileInputs.cache
+C:\Users\steph\OneDrive\Desktop\RPS\RPS\obj\Debug\net6.0\RPS.dll
+C:\Users\steph\OneDrive\Desktop\RPS\RPS\obj\Debug\net6.0\refint\RPS.dll
+C:\Users\steph\OneDrive\Desktop\RPS\RPS\obj\Debug\net6.0\RPS.pdb
+C:\Users\steph\OneDrive\Desktop\RPS\RPS\obj\Debug\net6.0\RPS.genruntimeconfig.cache
+C:\Users\steph\OneDrive\Desktop\RPS\RPS\obj\Debug\net6.0\ref\RPS.dll
