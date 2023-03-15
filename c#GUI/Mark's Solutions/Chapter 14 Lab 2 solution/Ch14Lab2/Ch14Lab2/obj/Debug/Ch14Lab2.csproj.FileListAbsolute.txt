@@ -1,0 +1,10 @@
+C:\Users\zmrb2\Desktop\Ch14Lab2\Ch14Lab2\bin\Debug\Ch14Lab2.exe.config
+C:\Users\zmrb2\Desktop\Ch14Lab2\Ch14Lab2\bin\Debug\Ch14Lab2.exe
+C:\Users\zmrb2\Desktop\Ch14Lab2\Ch14Lab2\bin\Debug\Ch14Lab2.pdb
+C:\Users\zmrb2\Desktop\Ch14Lab2\Ch14Lab2\obj\Debug\Ch14Lab2.csprojAssemblyReference.cache
+C:\Users\zmrb2\Desktop\Ch14Lab2\Ch14Lab2\obj\Debug\Ch14Lab2.frmCoinFlipSim.resources
+C:\Users\zmrb2\Desktop\Ch14Lab2\Ch14Lab2\obj\Debug\Ch14Lab2.Properties.Resources.resources
+C:\Users\zmrb2\Desktop\Ch14Lab2\Ch14Lab2\obj\Debug\Ch14Lab2.csproj.GenerateResource.cache
+C:\Users\zmrb2\Desktop\Ch14Lab2\Ch14Lab2\obj\Debug\Ch14Lab2.csproj.CoreCompileInputs.cache
+C:\Users\zmrb2\Desktop\Ch14Lab2\Ch14Lab2\obj\Debug\Ch14Lab2.exe
+C:\Users\zmrb2\Desktop\Ch14Lab2\Ch14Lab2\obj\Debug\Ch14Lab2.pdb

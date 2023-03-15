@@ -1,0 +1,80 @@
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.csproj.AssemblyReference.cache
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.AssemblyInfoInputs.cache
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.AssemblyInfo.cs
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.csproj.CoreCompileInputs.cache
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.exe
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.deps.json
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.runtimeconfig.json
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.runtimeconfig.dev.json
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.dll
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\bin\Debug\net5.0\ref\Ch.3 Lab.dll
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.pdb
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.dll
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\ref\Ch.3 Lab.dll
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.pdb
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.genruntimeconfig.cache
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.exe
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.deps.json
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.runtimeconfig.json
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.runtimeconfig.dev.json
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.dll
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\bin\Debug\net5.0\ref\Ch.3 Lab.dll
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.pdb
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.csproj.AssemblyReference.cache
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.AssemblyInfoInputs.cache
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.AssemblyInfo.cs
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.csproj.CoreCompileInputs.cache
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.dll
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\ref\Ch.3 Lab.dll
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.pdb
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Visual Studio\Projects\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.genruntimeconfig.cache
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.exe
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.deps.json
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.runtimeconfig.json
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.runtimeconfig.dev.json
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.dll
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\bin\Debug\net5.0\ref\Ch.3 Lab.dll
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.pdb
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.csproj.AssemblyReference.cache
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.AssemblyInfoInputs.cache
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.AssemblyInfo.cs
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.csproj.CoreCompileInputs.cache
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.dll
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\ref\Ch.3 Lab.dll
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.pdb
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.genruntimeconfig.cache
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.exe
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.deps.json
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.runtimeconfig.json
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.runtimeconfig.dev.json
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.dll
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\bin\Debug\net5.0\ref\Ch.3 Lab.dll
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.pdb
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.csproj.AssemblyReference.cache
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.AssemblyInfoInputs.cache
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.AssemblyInfo.cs
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.csproj.CoreCompileInputs.cache
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.dll
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\obj\Debug\net5.0\ref\Ch.3 Lab.dll
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.pdb
+C:\Users\steph\OneDrive - Walters State Community College\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.genruntimeconfig.cache
+C:\Users\steph\OneDrive\Desktop\School dox\Spring 2022\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.exe
+C:\Users\steph\OneDrive\Desktop\School dox\Spring 2022\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.deps.json
+C:\Users\steph\OneDrive\Desktop\School dox\Spring 2022\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.runtimeconfig.json
+C:\Users\steph\OneDrive\Desktop\School dox\Spring 2022\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.runtimeconfig.dev.json
+C:\Users\steph\OneDrive\Desktop\School dox\Spring 2022\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.dll
+C:\Users\steph\OneDrive\Desktop\School dox\Spring 2022\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\bin\Debug\net5.0\Ch.3 Lab.pdb
+C:\Users\steph\OneDrive\Desktop\School dox\Spring 2022\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.csproj.AssemblyReference.cache
+C:\Users\steph\OneDrive\Desktop\School dox\Spring 2022\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\steph\OneDrive\Desktop\School dox\Spring 2022\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.AssemblyInfoInputs.cache
+C:\Users\steph\OneDrive\Desktop\School dox\Spring 2022\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.AssemblyInfo.cs
+C:\Users\steph\OneDrive\Desktop\School dox\Spring 2022\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.csproj.CoreCompileInputs.cache
+C:\Users\steph\OneDrive\Desktop\School dox\Spring 2022\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.dll
+C:\Users\steph\OneDrive\Desktop\School dox\Spring 2022\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\obj\Debug\net5.0\refint\Ch.3 Lab.dll
+C:\Users\steph\OneDrive\Desktop\School dox\Spring 2022\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.pdb
+C:\Users\steph\OneDrive\Desktop\School dox\Spring 2022\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\obj\Debug\net5.0\Ch.3 Lab.genruntimeconfig.cache
+C:\Users\steph\OneDrive\Desktop\School dox\Spring 2022\Computer Science 1\Assignments\Chapter 3 Lab\Ch.3 Lab\obj\Debug\net5.0\ref\Ch.3 Lab.dll

@@ -1,0 +1,15 @@
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\bin\Release\net5.0\Ch.3 Lab.exe
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\bin\Release\net5.0\Ch.3 Lab.deps.json
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\bin\Release\net5.0\Ch.3 Lab.runtimeconfig.json
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\bin\Release\net5.0\Ch.3 Lab.runtimeconfig.dev.json
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\bin\Release\net5.0\Ch.3 Lab.dll
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\bin\Release\net5.0\ref\Ch.3 Lab.dll
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\bin\Release\net5.0\Ch.3 Lab.pdb
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\obj\Release\net5.0\Ch.3 Lab.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\obj\Release\net5.0\Ch.3 Lab.AssemblyInfoInputs.cache
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\obj\Release\net5.0\Ch.3 Lab.AssemblyInfo.cs
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\obj\Release\net5.0\Ch.3 Lab.csproj.CoreCompileInputs.cache
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\obj\Release\net5.0\Ch.3 Lab.dll
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\obj\Release\net5.0\ref\Ch.3 Lab.dll
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\obj\Release\net5.0\Ch.3 Lab.pdb
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 1\Assignments\Ch.3 Lab\Ch.3 Lab\obj\Release\net5.0\Ch.3 Lab.genruntimeconfig.cache

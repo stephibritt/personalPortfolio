@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "b2oBGE8ZVKqnk+Og1YtGGaGl3XCt/K5BdkPPdnt6ODAL+Ixec8YOgJUYfFG2VvwPHbjbJ/pBSYh62kajyF1RtA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sdbritt\\OneDrive - Walters State Community College\\Computer Science 1\\Assignments\\Chapter 5 Lab\\Chapter 5 Lab 1\\Chapter 5 Lab 1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sdbritt\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512",
+    "C:\\Users\\sdbritt\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\sdbritt\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\sdbritt\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

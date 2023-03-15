@@ -1,0 +1,31 @@
+C:\Users\zmrb2\Desktop\Ch16Lab\Ch16Lab\bin\Debug\Ch16Lab.exe.config
+C:\Users\zmrb2\Desktop\Ch16Lab\Ch16Lab\bin\Debug\Ch16Lab.exe
+C:\Users\zmrb2\Desktop\Ch16Lab\Ch16Lab\bin\Debug\Ch16Lab.pdb
+C:\Users\zmrb2\Desktop\Ch16Lab\Ch16Lab\obj\Debug\Ch16Lab.csproj.AssemblyReference.cache
+C:\Users\zmrb2\Desktop\Ch16Lab\Ch16Lab\obj\Debug\Ch16Lab.Properties.Resources.resources
+C:\Users\zmrb2\Desktop\Ch16Lab\Ch16Lab\obj\Debug\Ch16Lab.csproj.GenerateResource.cache
+C:\Users\zmrb2\Desktop\Ch16Lab\Ch16Lab\obj\Debug\Ch16Lab.csproj.CoreCompileInputs.cache
+C:\Users\zmrb2\Desktop\Ch16Lab\Ch16Lab\obj\Debug\Ch16Lab.exe
+C:\Users\zmrb2\Desktop\Ch16Lab\Ch16Lab\obj\Debug\Ch16Lab.pdb
+C:\Users\zmrb2\Desktop\Ch16Lab\Ch16Lab\obj\Debug\Ch16Lab.frmTextAnalyzer.resources
+C:\Users\zmrb2\Desktop\Ch16Lab2\Ch16Lab\bin\Debug\Ch16Lab.exe.config
+C:\Users\zmrb2\Desktop\Ch16Lab2\Ch16Lab\bin\Debug\Ch16Lab.exe
+C:\Users\zmrb2\Desktop\Ch16Lab2\Ch16Lab\bin\Debug\Ch16Lab.pdb
+C:\Users\zmrb2\Desktop\Ch16Lab2\Ch16Lab\obj\Debug\Ch16Lab.csproj.AssemblyReference.cache
+C:\Users\zmrb2\Desktop\Ch16Lab2\Ch16Lab\obj\Debug\Ch16Lab.frmTextAnalyzer.resources
+C:\Users\zmrb2\Desktop\Ch16Lab2\Ch16Lab\obj\Debug\Ch16Lab.Properties.Resources.resources
+C:\Users\zmrb2\Desktop\Ch16Lab2\Ch16Lab\obj\Debug\Ch16Lab.csproj.GenerateResource.cache
+C:\Users\zmrb2\Desktop\Ch16Lab2\Ch16Lab\obj\Debug\Ch16Lab.csproj.CoreCompileInputs.cache
+C:\Users\zmrb2\Desktop\Ch16Lab2\Ch16Lab\obj\Debug\Ch16Lab.exe
+C:\Users\zmrb2\Desktop\Ch16Lab2\Ch16Lab\obj\Debug\Ch16Lab.pdb
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 2\Mark's Solutions\Ch16Lab2\Ch16Lab\bin\Debug\Ch16Lab.exe.config
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 2\Mark's Solutions\Ch16Lab2\Ch16Lab\bin\Debug\Ch16Lab.exe
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 2\Mark's Solutions\Ch16Lab2\Ch16Lab\bin\Debug\Ch16Lab.pdb
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 2\Mark's Solutions\Ch16Lab2\Ch16Lab\obj\Debug\Ch16Lab.csproj.AssemblyReference.cache
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 2\Mark's Solutions\Ch16Lab2\Ch16Lab\obj\Debug\Ch16Lab.csproj.SuggestedBindingRedirects.cache
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 2\Mark's Solutions\Ch16Lab2\Ch16Lab\obj\Debug\Ch16Lab.frmTextAnalyzer.resources
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 2\Mark's Solutions\Ch16Lab2\Ch16Lab\obj\Debug\Ch16Lab.Properties.Resources.resources
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 2\Mark's Solutions\Ch16Lab2\Ch16Lab\obj\Debug\Ch16Lab.csproj.GenerateResource.cache
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 2\Mark's Solutions\Ch16Lab2\Ch16Lab\obj\Debug\Ch16Lab.csproj.CoreCompileInputs.cache
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 2\Mark's Solutions\Ch16Lab2\Ch16Lab\obj\Debug\Ch16Lab.exe
+C:\Users\sdbritt\OneDrive - Walters State Community College\Computer Science 2\Mark's Solutions\Ch16Lab2\Ch16Lab\obj\Debug\Ch16Lab.pdb
