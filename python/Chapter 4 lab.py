@@ -5,8 +5,6 @@
 #================================================================================#
 
 def main():
-    # MAINLINE LOGIC CODE BEGINS
-
     print("This program calculates the total cost of a series of items based on the Canadian payment method.\n")
     print("Enter an item's price or enter -1 to finish inputing items.\n")
 
@@ -61,8 +59,6 @@ def main():
             print()
         # end while
     # end while
-
-    # MAINLINE LOGIC CODE ENDS
 # end function
 
 # DO NOT MODIFY CODE BELOW THIS LINE
