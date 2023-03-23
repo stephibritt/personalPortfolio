@@ -1,16 +1,22 @@
 ﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 public class Easter {
     // member variables
-    private double _year;
-    private double _month;
-    private double _day;
+    private double m_year;
+    private double m_month;
+    private double m_day;
 
     // properties
-    public double Year { 
+    public double Year {
+        get {
+            return m_year;
+        } // end get
+
         set {
             if (value > 0) {
-                _year = value;
+                m_year = value;
             } else {
                 throw new ArgumentOutOfRangeException("Year must be greater than zero.");
             } // end if
@@ -20,12 +26,13 @@ public class Easter {
     // default constructor
     public Easter() {
         this.Year = DateTime.Now.Year;
+        this.CalculateEaster(Year);
     } // end constructor
 
     // one-argument constructor
     public Easter(double year) {
         this.Year = year;
-        this.CalculateEaster(_year);
+        this.CalculateEaster(Year);
     } // end constructor
 
     // calculate easter
@@ -43,11 +50,17 @@ public class Easter {
         double l = (32 + 2 * echo + 2 * i - h - k) % 7;
         double m = Math.Floor((a + 11 * h + 22 * l) / 451);
 
-        _month = Math.Floor((h + l - 7 * m + 114) / 31);
-        _day = 1 + ((h + l - 7 * m + 114) % 31);
+        m_month = Math.Floor((h + l - 7 * m + 114) / 31);
+        m_day = 1 + ((h + l - 7 * m + 114) % 31);
     } // end method
 
     public override string ToString() {
-        return $"In {_year}, Easter falls on March {_day}.";
+        if (m_month == 3) {
+            return $"In {Year}, Easter falls on March {m_day}.";
+        } else if (m_month == 4) {
+            return $"In {Year}, Easter falls on April {m_day}.";
+        } else {
+            return "An unknown error has occurred.";
+        } // end if
     } // end method
 } // end class
