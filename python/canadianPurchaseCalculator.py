@@ -42,16 +42,14 @@ def main():
         # if the value is greater than half, round up
         if determine >= 2.5:
             numNickel += 1
-            upTotal = numNickel * NICKEL
 
-            cash = upTotal
+            cash = numNickel * NICKEL
         elif determine <= 2.5 and determine > 0:
-            downTotal = numNickel * NICKEL
+            cash = numNickel * NICKEL
             
-            if downTotal < NICKEL:     # This if is assuming that you can't just pay nothing for a purchase under a nickel (if there were such a thing)
+            # if the cash total is less than a nickel, the customer cannot pay nothing
+            if cash < NICKEL:
                 cash = NICKEL
-            else:
-                cash = downTotal
             # end if
         else:
             cash = total
