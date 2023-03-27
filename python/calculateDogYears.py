@@ -27,8 +27,7 @@ def main():
     # end if
 
     # output the answer to the user
-    # print(f"\nA dog with a human age of {humYears} years is {format({dogYears}, .1)} in dog years.")
-    print("\nA dog with a human age of", format(humYears, ".1f"), "years is", format(dogYears, ".1f"), "in dog years.")
+    print(f"\nA dog with a human age of {humYears:.1f} years is {dogYears:.1f} in dog years.")
 # end function
 
 # DO NOT MODIFY CODE BELOW THIS LINE
