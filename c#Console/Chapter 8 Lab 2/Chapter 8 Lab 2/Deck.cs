@@ -39,7 +39,7 @@ class Deck {
             m_deckOfCards[i] = new Card(face[i % 13], color[i % 2], suits[i % 4], values[i % 13]);
         } // end for
     } // end method
-    
+
     public void Shuffle(int numberOfShuffles = 5) {
         while (numberOfShuffles < 1) {
             numberOfShuffles = 1;
@@ -54,9 +54,13 @@ class Deck {
                 // Select a random index between 0 and 51
                 int randomIndex = rnd.Next(NUMBER_OF_CARDS);
 
-                // Swap current Card object with randomly selected Card
+                // use a temporary card to store the current card
                 Card tempCard = m_deckOfCards[j];
+
+                // Swap current Card object with randomly selected Card
                 m_deckOfCards[j] = m_deckOfCards[randomIndex];
+
+                // insert the original card where the random card was
                 m_deckOfCards[randomIndex] = tempCard;
             } // end for
         } // end for
