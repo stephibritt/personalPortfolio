@@ -45,21 +45,21 @@ class Deck {
             numberOfShuffles = 1;
         } // end while
 
+        m_currentCardIndex = NUMBER_OF_CARDS - 1;
+
         // Shuffle x number of times
         for (int i = 0; i < numberOfShuffles; i++) {
             // For each card, pick another random Card and swap them
-            for (int thisIndex = 0; thisIndex < m_deckOfCards.Length; thisIndex++) {
+            for (int j = m_currentCardIndex; j >= 0; j--) {
                 // Select a random index between 0 and 51
                 int randomIndex = rnd.Next(NUMBER_OF_CARDS);
 
                 // Swap current Card object with randomly selected Card
-                Card tempCard = m_deckOfCards[thisIndex];
-                m_deckOfCards[thisIndex] = m_deckOfCards[randomIndex];
+                Card tempCard = m_deckOfCards[j];
+                m_deckOfCards[j] = m_deckOfCards[randomIndex];
                 m_deckOfCards[randomIndex] = tempCard;
             } // end for
         } // end for
-
-        m_currentCardIndex = NUMBER_OF_CARDS - 1;
     } // end method
 
     public Card DealCard() {
