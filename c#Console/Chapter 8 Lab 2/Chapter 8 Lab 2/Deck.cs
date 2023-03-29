@@ -45,6 +45,7 @@ class Deck {
             numberOfShuffles = 1;
         } // end while
 
+        // ensure that the current index is set to the desired value for shuffling
         m_currentCardIndex = NUMBER_OF_CARDS - 1;
 
         // Shuffle x number of times
