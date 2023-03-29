@@ -58,7 +58,7 @@ class Deck {
                 // use a temporary card to store the current card
                 Card tempCard = m_deckOfCards[j];
 
-                // Swap current Card object with randomly selected Card
+                // swap current Card object with randomly selected Card
                 m_deckOfCards[j] = m_deckOfCards[randomIndex];
 
                 // insert the original card where the random card was
