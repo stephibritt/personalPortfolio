@@ -1,0 +1,11 @@
+ -------------------
+ Symbol   | Location
+ ---------+---------
+ DO       |   108
+ END      |   10F
+ WHILE    |   104
+ inputOne |   114
+ inputTwo |   115
+ one      |   116
+ sum      |   117
+

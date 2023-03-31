@@ -1,0 +1,57 @@
+     Assembly listing for: multiplyTwoInputs.mas
+                Assembled: Thu Mar 30 21:49:49 EDT 2023
+
+         |           ORG 100             
+         |                              
+         |                              / get and store inputs from user
+100 5000 |           INPUT               
+101 2114 |           STORE inputOne      
+         |                              
+102 5000 |           INPUT               
+103 2115 |           STORE inputTwo      
+         |                              
+         |                              / while inputOne does not equal zero jump to do, otherwise jump to end
+104 1114 |  WHILE    LOAD inputOne       
+105 8400 |           SKIPCOND 400        
+106 9108 |           JUMP DO             
+107 910F |           JUMP END            
+         |                              
+         |                              / add inputTwo to sum
+108 1117 |  DO       LOAD sum            
+109 3115 |           ADD inputTwo        
+10A 2117 |           STORE sum           
+         |                              
+         |                              / decrement inputOne by one
+10B 1114 |           LOAD inputOne       
+10C 4116 |           SUBT one            
+10D 2114 |           STORE inputOne      
+10E 9104 |           JUMP WHILE          
+         |                              
+         |                              / output the value of sum, then clear sum in case of iterative runs
+10F 1117 |  END      LOAD sum            
+110 6000 |           OUTPUT              
+111 A000 |           CLEAR               
+112 2117 |           STORE sum           
+113 7000 |           HALT                
+         |                              
+114 0000 |  inputOne DEC 0               
+115 0000 |  inputTwo DEC 0               
+116 0001 |  one      DEC 1               
+117 0000 |  sum      DEC 0               
+
+Assembly successful.
+
+         SYMBOL TABLE
+         ----------------------------------------------------
+          Symbol   | Defined | References 
+         ----------+---------+-------------------------------
+          DO       |   108   | 106
+          END      |   10F   | 107
+          WHILE    |   104   | 10E
+          inputOne |   114   | 101, 104, 10B, 10D
+          inputTwo |   115   | 103, 109
+          one      |   116   | 10C
+          sum      |   117   | 108, 10A, 10F, 112
+         ----------------------------------------------------
+
+

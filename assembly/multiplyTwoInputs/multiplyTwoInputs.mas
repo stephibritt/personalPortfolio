@@ -1,0 +1,37 @@
+ORG 100
+
+/ get and store inputs from user
+INPUT
+STORE inputOne
+
+INPUT
+STORE inputTwo
+
+/ while inputOne does not equal zero jump to do, otherwise jump to end
+WHILE, LOAD inputOne
+       SKIPCOND 400
+       JUMP DO
+       JUMP END
+
+/ add inputTwo to sum
+DO, LOAD sum
+    ADD inputTwo
+    STORE sum
+
+/ decrement inputOne by one
+    LOAD inputOne
+    SUBT one
+    STORE inputOne
+    JUMP WHILE
+
+/ output the value of sum, then clear sum in case of iterative runs
+END, LOAD sum
+     OUTPUT
+     CLEAR
+     STORE sum
+     HALT
+
+inputOne,  Dec 0
+inputTwo,  Dec 0
+one,       Dec 1
+sum,       Dec 0
