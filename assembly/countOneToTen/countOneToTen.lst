@@ -1,0 +1,54 @@
+     Assembly listing for: countOneToTen.mas
+                Assembled: Thu Mar 30 21:06:19 EDT 2023
+
+         |         ORG 100           
+         |                          
+         |                          / while count is greater than zero
+100 1110 |  WHILE  LOAD count        
+101 8400 |         SKIPCOND 400      
+         |                          
+         |                          / jump to do
+102 9104 |         JUMP DO           
+         |                          
+         |                          /otherwise, jump to end
+103 910B |         JUMP END          
+         |                          
+         |                          / add x to sum then store the result in sum
+104 110F |  DO     LOAD sum          
+105 310E |         ADD x             
+106 210F |         STORE sum         
+         |                          
+         |                          / decrement the counter by 1
+107 1110 |         LOAD count        
+108 4111 |         SUBT one          
+109 2110 |         STORE count       
+         |                          
+         |                          / jump to while
+10A 9100 |         JUMP WHILE        
+         |                          
+         |                          / output the contents of sum and end the program
+10B 110F |  END    LOAD sum          
+10C 6000 |         OUTPUT            
+10D 7000 |         HALT              
+         |                          
+10E 0001 |  x      DEC 1             
+10F 0000 |  sum    DEC 0             
+110 000A |  count  DEC 10            
+111 0001 |  one    DEC 1             
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------
+          Symbol | Defined | References 
+         --------+---------+-------------------------------
+          DO     |   104   | 102
+          END    |   10B   | 103
+          WHILE  |   100   | 10A
+          count  |   110   | 100, 107, 109
+          one    |   111   | 108
+          sum    |   10F   | 104, 106, 10B
+          x      |   10E   | 105
+         --------------------------------------------------
+
+

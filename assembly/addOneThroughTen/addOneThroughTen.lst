@@ -1,0 +1,59 @@
+     Assembly listing for: addOneThroughTen.mas
+                Assembled: Thu Mar 30 21:04:53 EDT 2023
+
+         |         ORG 100           
+         |                          
+         |                          / while count is greater than zero
+100 1113 |  WHILE  LOAD count        
+101 8400 |         SKIPCOND 400      
+         |                          
+         |                          / jump to do
+102 9104 |         JUMP DO           
+         |                          
+         |                          /otherwise, jump to end
+103 910E |         JUMP END          
+         |                          
+         |                          / add x to sum then store the result in sum
+104 1112 |  DO     LOAD sum          
+105 3111 |         ADD x             
+106 2112 |         STORE sum         
+         |                          
+         |                          / add one to x to prepare for the next iteration 
+107 1111 |         LOAD x            
+108 3114 |         ADD one           
+109 2111 |         STORE x           
+         |                          
+         |                          / decrement the counter by 1
+10A 1113 |         LOAD count        
+10B 4114 |         SUBT one          
+10C 2113 |         STORE count       
+         |                          
+         |                          / jump to while
+10D 9100 |         JUMP WHILE        
+         |                          
+         |                          / output the contents of sum and end the program
+10E 1112 |  END    LOAD sum          
+10F 6000 |         OUTPUT            
+110 7000 |         HALT              
+         |                          
+111 0001 |  x      DEC 1             
+112 0000 |  sum    DEC 0             
+113 000A |  count  DEC 10            
+114 0001 |  one    DEC 1             
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------
+          Symbol | Defined | References 
+         --------+---------+-------------------------------
+          DO     |   104   | 102
+          END    |   10E   | 103
+          WHILE  |   100   | 10D
+          count  |   113   | 100, 10A, 10C
+          one    |   114   | 108, 10B
+          sum    |   112   | 104, 106, 10E
+          x      |   111   | 105, 107, 109
+         --------------------------------------------------
+
+

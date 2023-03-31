@@ -1,0 +1,39 @@
+ORG 100
+
+/ while count is greater than zero
+WHILE, LOAD count
+       SKIPCOND 400
+
+/ jump to do
+       JUMP DO
+
+/otherwise, jump to end
+       JUMP END
+
+/ add x to sum then store the result in sum
+DO, LOAD sum
+    ADD x
+    STORE sum
+
+/ add one to x to prepare for the next iteration 
+    LOAD x
+    ADD one
+    STORE x
+
+/ decrement the counter by 1
+    LOAD count
+    SUBT one
+    STORE count
+
+/ jump to while
+    JUMP WHILE
+
+/ output the contents of sum and end the program
+END, LOAD sum
+     OUTPUT
+     HALT
+
+x,       Dec 1
+sum,     Dec 0
+count,   Dec 10
+one,     Dec 1

@@ -1,0 +1,11 @@
+ -----------------
+ Symbol | Location
+ -------+---------
+ DO     |   104
+ END    |   10B
+ WHILE  |   100
+ count  |   110
+ one    |   111
+ sum    |   10F
+ x      |   10E
+

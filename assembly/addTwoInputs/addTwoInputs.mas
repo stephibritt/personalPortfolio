@@ -1,0 +1,21 @@
+ORG 100
+
+/ get input one from user and store it
+INPUT
+STORE        inputOne
+
+/ get input one from user and store it
+INPUT
+STORE        inputTwo
+
+/ add input one
+ADD          inputOne
+
+/ store the result in sum
+STORE        sum
+OUTPUT
+HALT
+
+inputOne,    Dec 0
+inputTwo,    Dec 0
+sum,         Dec 0
