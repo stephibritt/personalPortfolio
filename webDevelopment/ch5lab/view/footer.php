@@ -1,5 +1,5 @@
-<footer class="w3-center w3-red w3-bottombar w3-small">
-    <p><?php echo date("Y"); ?> Video Game Database (Educational Use Only)
+<footer class="w3-center w3-blue-gray w3-bottombar w3-small">
+    <p><?php echo date("Y"); ?> DPJS Database (Educational Use Only)
         <br>
         Edited by: Stephen Britt and Brandon France
     </p>
