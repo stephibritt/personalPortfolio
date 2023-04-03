@@ -1,79 +1,56 @@
 <?php
-    // receive data from POST array
-    $firstName = filter_input(INPUT_POST, 'firstName');
-    $lastName = filter_input(INPUT_POST, 'lastName');
-    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-    $phone = filter_input(INPUT_POST, 'phone');
-    
-    // set error message to an empty string
-    $errorMessage = "";
-    
-    // validate the data
-    if ($firstName === FALSE) {
-        $errorMessage = "First name must contain a value.";
+    if (!isset($firstName)) {
+        $firstName = "";
     } // end if
     
-    if ($lastName === FALSE) {
-        $errorMessage = "Last name must contain a value.";
+    if (!isset($lastName)) {
+        $lastName = "";
     } // end if
     
-    //if an error message exist, return to index.php
-    if ($errorMessage != "") {
-        include("addPersonForm.php");
-        exit();
+    if (!isset($email)) {
+        $email = "";
     } // end if
     
-    if (!empty($firstName) && !empty($lastName) && !empty($email) && !empty($phone)) {
-        require_once('database.php');
-
-        // add the person to the database  
-        $insertQuery = 'INSERT INTO person (first_name, last_name, email, phone)
-            VALUES (:first_name, :last_name, :email, :phone)';
-        $statement = $db->prepare($insertQuery);
-        $statement->bindValue(':first_name', $firstName);
-        $statement->bindValue(':last_name', $lastName);
-        $statement->bindValue(':email', $email);
-        $statement->bindValue(':phone', $phone);
-        $statement->execute();
-        $statement->closeCursor();
-    } else if (!empty($firstName) && !empty($lastName) && !empty($email) && empty($phone)) {
-        require_once('database.php');
-
-        // add the person to the database
-        $insertQuery = 'INSERT INTO person (first_name, last_name, email)
-            VALUES (:first_name, :last_name, :email)';
-        $statement = $db->prepare($insertQuery);
-        $statement->bindValue(':first_name', $firstName);
-        $statement->bindValue(':last_name', $lastName);
-        $statement->bindValue(':email', $email);
-        $statement->execute();
-        $statement->closeCursor();
-    } else if (!empty($firstName) && !empty($lastName) && empty($email) && !empty($phone)) {
-        require_once('database.php');
-
-        // add the person to the database
-        $insertQuery = 'INSERT INTO person (first_name, last_name, phone)
-            VALUES (:first_name, :last_name, :phone)';
-        $statement = $db->prepare($insertQuery);
-        $statement->bindValue(':first_name', $firstName);
-        $statement->bindValue(':last_name', $lastName);
-        $statement->bindValue(':phone', $phone);
-        $statement->execute();
-        $statement->closeCursor();
-    } else if (!empty($firstName) && !empty($lastName) && empty($email) && empty($phone)) {
-        require_once('database.php');
-
-        // add the person to the database
-        $insertQuery = 'INSERT INTO person (first_name, last_name)
-            VALUES (:first_name, :last_name)';
-        $statement = $db->prepare($insertQuery);
-        $statement->bindValue(':first_name', $firstName);
-        $statement->bindValue(':last_name', $lastName);
-        $statement->execute();
-        $statement->closeCursor();
+    if (!isset($phone)) {
+        $phone = "";
     } // end if
-    
-    $addedMessage = "$firstName $lastName has been added.";
-    
-    include("viewPerson.php");
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Chapter 6 Lab: Manage Person</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./w3.css">
+    </head>
+    
+    <body>
+        <header>
+            <h1 class="w3-blue-gray w3-center">Add Person</h1>
+        </header>
+        <?php include("view/nav.php"); ?>
+        
+        <main>
+            <p>Use this page to add a person to the database.</p>
+            
+                <form class="w3-container w3-margin" action="." method="post" id="addPersonForm">
+                    <input type="hidden" name="action" value="addPerson">
+                    <input class="w3-input w3-border w3-round" type="text" placeholder="First Name" name="firstName" value="<?php echo htmlspecialchars($firstName); ?>" required autofocus>
+                    <br>
+                    <input class="w3-input w3-border w3-round" type="text" placeholder="Last Name" name="lastName" value="<?php echo htmlspecialchars($lastName); ?>" required>
+                    <br>
+                    <input class="w3-input w3-border w3-round" type="email" placeholder="Email" name="email" value="<?php echo htmlspecialchars($email); ?>">
+                    <br>
+                    <input class="w3-input w3-border w3-round" type="phone" placeholder="Phone (XXX-XXX-XXXX)" name="phone" value="<?php echo htmlspecialchars($phone); ?>">
+                    <br>
+                
+                    <div class="w3-center">
+                        <input class="w3-btn w3-blue-gray" type="submit" value="Add">
+                    </div>
+                </form>
+        </main>
+            
+        <?php include("./view/footer.php"); ?>
+    </body>
+</html>

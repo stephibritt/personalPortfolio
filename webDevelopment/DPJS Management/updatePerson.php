@@ -1,80 +1,64 @@
 <?php
-    require_once('database.php');
-    
+    //get variables
     $person_id = filter_input(INPUT_POST, 'person_id', FILTER_VALIDATE_INT);
     $firstName = filter_input(INPUT_POST, 'firstName');
     $lastName = filter_input(INPUT_POST, 'lastName');
     $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
     $phone = filter_input(INPUT_POST, 'phone');
     
-    // set error message to an empty string
-    $errorMessage = "";
-    
-    //if an error message exist, return to index.php
-    if ($errorMessage != "") {
-        include("updatePersonForm.php");
-        exit();
+    if (!isset($firstName)) {
+        $firstName = "";
     } // end if
     
-    if (!empty($firstName) && !empty($lastName) && !empty($email) && !empty($phone)) {
-        require_once('database.php');
-
-        // update all fields of the person table  
-        $updateQuery = 'UPDATE person
-            SET first_name = :first_name, last_name = :last_name, email = :email, phone = :phone
-            WHERE person_id = :person_id';
-        $statement = $db->prepare($updateQuery);
-        $statement->bindValue(':person_id', $person_id);
-        $statement->bindValue(':first_name', $firstName);
-        $statement->bindValue(':last_name', $lastName);
-        $statement->bindValue(':email', $email);
-        $statement->bindValue(':phone', $phone);
-        $success = $statement->execute();
-        $statement->closeCursor();
-    } else if (!empty($firstName) && !empty($lastName) && !empty($email) && empty($phone)) {
-        require_once('database.php');
-
-        // update first name, last name, and email
-        $updateQuery = 'UPDATE person
-            SET first_name = :first_name, last_name = :last_name, email = :email
-            WHERE person_id = :person_id';
-        $statement = $db->prepare($updateQuery);
-        $statement->bindValue(':person_id', $person_id);
-        $statement->bindValue(':first_name', $firstName);
-        $statement->bindValue(':last_name', $lastName);
-        $statement->bindValue(':email', $email);
-        $success = $statement->execute();
-        $statement->closeCursor();
-    } else if (!empty($firstName) && !empty($lastName) && empty($email) && !empty($phone)) {
-        require_once('database.php');
-
-        // update first name, last name, and phone
-        $updateQuery = 'UPDATE person
-            SET first_name = :first_name, last_name = :last_name, phone = :phone
-            WHERE person_id = :person_id';
-        $statement = $db->prepare($updateQuery);
-        $statement->bindValue(':person_id', $person_id);
-        $statement->bindValue(':first_name', $firstName);
-        $statement->bindValue(':last_name', $lastName);
-        $statement->bindValue(':phone', $phone);
-        $success = $statement->execute();
-        $statement->closeCursor();
-    } else if (!empty($firstName) && !empty($lastName) && empty($email) && empty($phone)) {
-        require_once('database.php');
-
-        // update first name and last name
-        $updateQuery = 'UPDATE person
-            SET first_name = :first_name, last_name = :last_name
-            WHERE person_id = :person_id';
-        $statement = $db->prepare($updateQuery);
-        $statement->bindValue(':person_id', $person_id);
-        $statement->bindValue(':first_name', $firstName);
-        $statement->bindValue(':last_name', $lastName);
-        $success = $statement->execute();
-        $statement->closeCursor();
+    if (!isset($lastName)) {
+        $lastName = "";
     } // end if
     
-    $updatedMessage = "$firstName $lastName has been updated.";
+    if (!isset($email)) {
+        $email = "";
+    } // end if
     
-    include("viewPerson.php");
+    if (!isset($phone)) {
+        $phone = "";
+    } // end if
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Chapter 6 Lab: Manage Person</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./w3.css">
+    </head>
+    
+    <body>
+        <header>
+            <h1 class="w3-blue-gray w3-center">Update Person</h1>
+        </header>
+        <?php include("./view/nav.php"); ?>
+        
+        <main>
+            <p>Use this page to update a person file on the database.</p>
+            
+                <form class="w3-container w3-margin" action="." method="post" id="updatePersonForm">
+                    <input type="hidden" name="action" value="updatePerson">
+                    <input type="hidden" name="person_id" value="<?php echo $person_id; ?>">
+                    <input class="w3-input w3-border w3-round" type="text" placeholder="First Name" name="firstName" value="<?php echo htmlspecialchars($firstName); ?>" required autofocus>
+                    <br>
+                    <input class="w3-input w3-border w3-round" type="text" placeholder="Last Name" name="lastName" value="<?php echo htmlspecialchars($lastName); ?>" required>
+                    <br>
+                    <input class="w3-input w3-border w3-round" type="email" placeholder="Email" name="email" value="<?php echo htmlspecialchars($email); ?>">
+                    <br>
+                    <input class="w3-input w3-border w3-round" type="phone" placeholder="Phone (XXX-XXX-XXXX)" name="phone" value="<?php echo htmlspecialchars($phone); ?>">
+                    <br>
+                
+                    <div class="w3-center">
+                        <input class="w3-btn w3-blue-gray" type="submit" value="Update">
+                    </div>
+                </form>
+        </main>
+            
+        <?php include("./view/footer.php"); ?>
+    </body>
+</html>
