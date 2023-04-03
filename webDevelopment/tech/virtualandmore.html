@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!-- 
+Edited by: John Breeden and Stephen Britt
+File Name: template.html
+Date: 03/04/2022
+-->
+
+<html lang="en">
+    <head>
+        <title>Virtual and Beyond | Brave New Technology</title>                <!-- FINAL ELEMENT: descriptive title -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- meta tag for display size-->
+        <meta name="author" content="Stephen Britt and John Breeden">           <!-- FINAL ELEMENT: meta description -->
+        <meta name="description" content="Presents viewers with additional ways in which virtual reality is contributing to future technological functionality.">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/styles.min.css"> <!--link tag connecting to style sheet-->
+        <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet"> <!-- Syne Mono custom font from Google Fonts-->
+
+        <!-- Favicon installation-->                                                                <!-- FINAL ELEMENT: favicon -->
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+        <link rel="icon" sizes="192x192" href="images/android-chrome-192x192.png">
+    </head>
+
+    <body>
+        <!-- Skip to Content Link -->
+        <a class="skip" href="#content">Skip to Content</a>                                         <!-- FINAL ELEMENT: skip to content -->
+        
+        <div id="container">
+            <!-- Mobile Nav -->
+            <nav class="mobile-nav">                                                                <!-- FINAL ELEMENT: hamburger menu -->
+                <div id="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="blockchain.html">Blockchain</a>
+                    <a href="cloudcomputing.html">Cloud Computing</a>
+                    <a href="metaverse.html">Life in the Metaverse</a>
+                    <a href="virtualandmore.html">Virtual and More</a>
+                    <a href="glossary.html">Glossary</a>
+                </div>
+    
+                <a class="nav-icon" onclick="menu()">
+                    <div id="icon">&#9776;</div>
+                </a>
+            </nav>
+
+            <!--header section-->            
+            <header> <!--default page banner-->
+                <a href="index.html"><img src="images/posed_android_header.jpg" alt="Future Technology Image"></a>
+            </header>
+            
+            <!--Navigation Section-->
+            <nav class="tab-desk">
+                <ul>
+                    <li><a href="index.html">Home</a></li>  
+                    <li><a href="blockchain.html">Blockchain</a></li>
+                    <li><a href="cloudcomputing.html">Cloud Computing</a></li>
+                    <li><a href="metaverse.html">Life in the Metaverse</a></li>
+                    <li><a href="virtualandmore.html">Virtual and More</a></li>
+                    <li><a href="glossary.html">Glossary</a></li>
+                </ul>
+            </nav>
+
+            <!--Main Body Section-->
+            <main id="content">
+                <h1>Virtual Worlds and Beyond</h1>
+
+                <article>                           <!-- FINAL ELEMENT: article -->
+                    <div class="grid">              <!-- FINAL ELEMENT: grid layout -->
+                        <section>                   <!-- FINAL ELEMENT: section -->
+                            <h1>Virtual Reality Used As A Tool</h1>
+                            <div class="subtopic2 tab-desk">
+                                <!--
+                                <figure class="frame">
+                                    <img src="images/VRTools.jpg" alt="Using virtual reality as a tool" class="tab-desk">
+                                    <figcaption class="figcap">Scientists using virtual reality for molecule modeling, collaborating over distances.</figcaption>
+                                </figure>      -->
+                                
+                                <video controls poster="images/VRTools.jpg">                                                        <!-- FINAL ELEMENT: video/control/poster -->
+                                    <source src="media/NanoScaleCompressed.mp4" type="video/mp4">                                   <!-- FINAL ELEMENT: mp4 format / 3 source elements -->
+                                    <source src="media/NanoScaleCompressed.webm" type="video/webm">                                 <!-- FINAL ELEMENT: webm format -->
+                                    <source src="media/NanoScaleCompressed.ogv" type="video/ogv">                                   <!-- FINAL ELEMENT: ogv format -->
+                                    <track src="media/captions.vtt" kind="captions" srclang="en" label="On">                        <!-- FINAL ELEMENT: track element for caption -->
+                                    <track src="media/descriptions.vtt" kind="descriptions" srclang="en" label="Descriptions">      <!-- FINAL ELEMENT: track element for descriptions -->
+                                    <p>Your browser does not support the video element.</p>                                         <!-- FINAL ELEMENT: video fallback -->
+                                </video>
+                            </div>
+                        </section>
+        
+                        <section>                   <!-- FINAL ELEMENT: section -->
+                            <h1>Education and the Metaverse</h1>
+                            <div class="subtopic2">
+                                <figure class="frame">                          <!-- FINAL ELEMENT: figure -->  <!-- FINAL ELEMENT: images of new tech -->
+                                    <img src="images/VirtualRealityEducation.jpg" alt="Students using virtual realtiy headsets." class="tab-desk">
+                                    <figcaption class="figcap">Listen here to how schools are incorporating virtual reality into educational programs.</figcaption>
+                                </figure>
+                                <audio controls>                                                        <!-- FINAL ELEMENT: audio / controls -->
+                                    <source src="media/VRInEducationPodcast.mp3" type="audio/mp3">      <!-- FINAL ELEMENT: mp3 file format -->
+                                    <source src="media/VRInEducationPodcast.ogg" type="audio/ogg">      <!-- FINAL ELEMENT: ogg file format -->
+                                    <p>Your browser does not support the audio element.</p>             <!-- FINAL ELEMENT: audio fallback text -->
+                                </audio>
+                            </div>
+                        </section>
+
+                        <section>                   <!-- FINAL ELEMENT: section -->             <!-- FINAL ELEMENT: style form for viewports: adjusts with section rules -->
+                            <h1>What future tech fascinates you?</h1>
+                            <div class="subtopic2">
+                                <div id="form">                                                 <!-- FINAL ELEMENT: form -->
+                                    <h2>Tell us what you are interested in?</h2>
+                                    <form class="form-grid">
+                                        <fieldset>
+                                            <legend>Reader's Information</legend>
+                                            <div class="form-group">                            <!-- FINAL ELEMENT: user bootstrap elements (form-group) -->
+                                                <label for="fName">First Name: </label>
+                                                <input type="text" class="form-control" name="fName" id="fName" placeholder="Enter first name" required>    <!-- FINAL ELEMENT: required text field -->
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="lName">Last Name: </label>
+                                                <input type="text" class="form-control" name="lName" id="lName" placeholder="Enter last name" required>     <!-- FINAL ELEMENT: required text field -->
+                                            </div>
+                                            <div>
+                                                <label for="email">Email Address: </label>
+                                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" required>        <!-- FINAL ELEMENT: required text field -->
+                                            </div>
+                                        </fieldset>
+                                        <fieldset>
+                                            <legend>Your Interests</legend>
+                                            
+                                            <p>Which topics interested you most? </p>
+                                            <div class="form-check">
+                                                <input class="form-check-input"  type="checkbox" value="" id="bchain">
+                                                <label class="form-check-label" for="bchain">Blockchain</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="cloud">
+                                                <label class="form-check-label" for="cloud">Cloud Computing</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="meta">
+                                                <label class="form-check-label" for="meta">Metaverse</label>
+                                            </div>
+                                            <label for="interests">What other topics interest you? </label>
+                                            <textarea id="interests" name="interests" rows="5" cols="20"></textarea>            <!-- FINAL ELEMENT: textarea field -->
+                                        </fieldset>
+                                        <fieldset>
+                                            <legend></legend>
+                                            <label for="reference">How did you find our site?</label>
+                                            <select name="reference" id="reference">                                            <!-- FINAL ELEMENT: select area -->
+                                                <option value="Web Search">Web Search</option>
+                                                <option value="Coursework">Course Materials</option>
+                                                <option value="Authors">Authors</option>
+                                            </select>
+                                        </fieldset>
+                                        <br><hr>
+                                        <fieldset>
+                                            <div class="form-group">
+                                                <label for="upload">Send us your articles</label>
+                                                <input type="file" class="form-control-file" id="upload">                       <!-- FINAL ELEMENT: form not used in chapter (upload) -->
+                                            </div>
+                                        </fieldset>
+                                        <br><br><br>
+                                        <fieldset>
+                                            <button type="button" class="btn btn-secondary btn-lg button_css">Submit</button>   <!-- FINAL ELEMENT: submit button -->
+                                        </fieldset>                                                                             <!-- FINAL ELEMENT: use bootstrap elements -->
+                                    </form>
+                                </div>
+                            </div>
+                        </section>   
+                    </div>   
+                </article>            
+            </main>
+
+            <!--Footer Section & Contact Information-->
+            <footer>
+                <div class="copyright">
+                    <p>&copy; Copyright 2022. All Rights Reserved.</p>
+                    <p>Edited by: John Breeden and Stephen Britt</p>
+                    <p>Contact Us:
+                    <br>
+                    <a href="mailto:sdbritt@senators.ws.edu">sdbritt@senators.ws.edu</a>
+                    <br>
+                    <a href="mailto:jabreeden4@senators.ws.edu">jabreeden4@senators.ws.edu</a></p>
+                </div>
+
+                <div class="social">
+                    <a href="https://www.facebook.com" target="_blank"><img src="images/facebook-logo.png" alt="Facebook logo"></a>             <!-- FINAL ELEMENT: social media links -->
+                    <a href="https://www.twitter.com" target="_blank"><img src="images/twitter-logo.png" alt="Twitter logo"></a>
+                    <a href="https://www.linkedin.com" target="_blank"><img src="images/linkedin-logo.PNG" alt="LinkedIn logo"></a>
+                </div>
+            </footer>
+        </div>
+        
+        <script src="scripts/script.js"></script>
+    </body>
+</html>

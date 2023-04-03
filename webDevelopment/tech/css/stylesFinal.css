@@ -1,0 +1,659 @@
+/* 
+Authors: Stephen Britt
+         John Breeden
+File Name: styles.css
+Date: 04/24/2022
+*/
+
+/* Style Sheet CSS Reset */
+body, .skip, header, nav, main, footer, img, h1, h3, ul, li, figure, figcaption, article, section, aside, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-style: none;
+}
+
+/* Base Style Rules for all viewports (Mobile-First) */
+body {
+    /* set body color to a light background for articles */
+    background-color: #f6eee4;
+}
+
+header, nav {
+    /* set header and nav background color to dark for header image overlay */
+    background-color: #2a1f14; 
+}
+
+main {
+    /* set main fonts and styles 
+    NOTE: use of Google Font Syne Mono */
+    padding: 2%;
+    font-family: "Syne Mono", Arial, sans-serif;
+}
+
+main a:visited {
+    color: #2424ff;
+}
+
+/* Image Style Rules for elements shared between pages */
+img {
+    /* images set to 100% display size with block formatting */
+    max-width: 100%;
+    display: block;
+    margin: 0 auto; 
+}
+
+/* Style elements for skip to content */
+.skip {
+    display: none;
+}
+
+.skip:focus {
+    display: none;
+}
+
+/* Set view for mobile viewport */
+.mobile, .mobile-tablet {
+display: block;
+}
+
+.tab-desk, .desktop, .tablet, #nav-links {
+    display: none;
+}
+
+/* Style rules for mobile headers */
+.mobile h1 {
+padding: 2%;
+text-align: center;
+font-family: "Emblema One", Arial, serif;
+}
+
+.mobile h3 {
+padding: 2%;
+text-align: center;
+font-family: "Lora", Arial, serif;
+}
+
+/* Style rules for nav elements */
+.mobile-nav a {
+    color: #fff;
+    text-align: center;
+    font-size: 2em;
+    text-decoration: none;
+    padding: 3%;
+    display: block;
+}
+
+.mobile-nav a.nav-icon {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #f6eee4;
+    padding: 2%;
+}
+
+/* Style rules for aditional elements */
+article {
+    /* Container element (div) */
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
+
+.round {
+    /* set default radius for all rounded elements */
+    border-radius: 15px;
+}
+
+/* Specific Homepage settings (index.html) */
+.index_header {
+    /* Homepage: Center Header line between images left & right */
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.index_left_image {
+    /* Homepage: push image to left of header */
+    width: 30%;
+    float: left;
+}
+
+.index_right_image {
+    /* Homepage: push image to right of header */
+    width: 30%;
+    float: right;
+}
+
+.index_button_block {
+    /* Homepage: build in links for article elements used as buttons */
+    clear: both;
+}
+
+/* Specific Glossary settings (glossary.html) */
+.glossary_entry {
+    /* Glossary: grouping of elements by purpose/type */
+    display: block;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    margin-top: 0px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #f6eee4;
+    background: linear-gradient(to bottom right, #fff, rgb(28, 138, 52));
+}
+
+.glossary_entry h1 {
+    /* Glossary: header element of entry */
+    width: 100%;
+    text-align: center;
+    background: #2a1f14;
+    border-radius: 25px;
+    color: #fff;
+    /* text-shadow: 10px 10px red; --element did not work in midterm edition */
+}
+
+dt {
+    /* Glossary: set up for dictionary terms */
+    font-size: xx-large;
+    text-decoration: underline;
+    padding: 3px;
+    cursor: pointer;
+}
+
+dd {
+    /* Glossary: set up for dictionary definitions */
+    font-size: larger;
+    color: darkblue;
+}
+
+.glossary_entry a {
+    /* Glossary: set up for link elements in the glossary to reference outside site */
+    text-decoration: none;
+    color: darkblue;
+}
+
+/* ATTTENTION ON THESE ELEMENTS FOR CHANGES!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */   
+
+
+                                                                /* This block appears to be artifacts of planning stage */
+    main p {
+        /* style rules for main paragraph element (not currently in use) */
+        font-size: 1.25em;
+    }
+
+    main h3 {
+        /* style rules for main level 3 headers (not currently in use) */
+        padding-top: 2%;
+    }
+
+    main ul {
+        /* style rules for main unordered lists & list elements (not currently in use) */
+        list-style-type: square;
+    }
+                                                                /* end of artifacts block */
+                                
+     
+
+    /* Section rules for columns & grid building*/
+    section {
+        display: block;
+        align-self: stretch;
+        height: auto;
+        text-align: center;
+        margin-top: 0px;
+        border-style: solid;
+        border-width: 5px;
+        border-color: #f6eee4;
+        background: linear-gradient(to bottom right, #fff, rgb(28, 138, 52))
+               
+    }                                                           
+
+    section a {
+        text-decoration: none;
+        color: #2a1f14;
+        padding: 0%;
+    }
+
+    section h1 {
+        width: 100%;
+        text-align: center;
+        background: #2a1f14;
+        border-radius: 25px;
+        color: #fff;
+    }
+
+    section h2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .subtopic2 ul li {
+        padding-top: 10px;
+        list-style-type: none;
+    }
+
+    .subtopic2 ul li a {
+        text-decoration: none;
+        color: darkred;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 10px;
+    }
+
+    aside {
+        display: none;
+    }
+
+    caption {
+        border-collapse: collapse;
+        margin-bottom: 3px;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    table tr, td {
+ 
+        border: 0.3em solid rgba(0, 0, 0, 0.5); 
+        padding: 2px;
+        height: 2em;
+    }
+    table th {
+        background-color:rgb(28, 138, 52);
+        color: #fff;
+    }
+
+    table td {
+        background-color: rgb(175, 238, 175);
+    }
+
+    .noBorder {
+        border: none;
+        background-color: rgb(28, 138, 52);
+        color: #fff;
+    }
+
+    .sideLabel {
+        background-color:rgb(28, 138, 52);
+        color: #fff;
+    }
+
+    figcaption {
+        display: none;
+    }
+
+    video {
+        max-width: 60%;
+        border-radius: 10px;
+    }
+
+    audio {
+        max-width: 30%;
+    }
+
+    fieldset {
+        padding: 2%;
+    }
+
+/* Style rules for footer content */
+footer, footer a {
+    overflow: auto;
+    text-align: center;
+    clear: both;
+    background-color: #2a1f14;
+    color: #f6eee4;
+    text-decoration: none;
+}
+
+.copyright{
+    padding: 0 2%;
+}
+
+footer .social a {
+    display: inline-block;
+    padding: 4%;       
+}
+
+/* Set view for tablet viewport 1000*/
+@media screen and (min-width: 620px) {
+    .tab-desk, .tablet {
+        display: block;
+    }
+
+    .mobile, .mobile-nav {
+        display: none;
+    }
+
+    /* Tablet nav bar */
+    nav ul {
+        /* style rules for navigation list (buttons) */
+        list-style-type: none;
+        text-align: center;
+    }
+    
+    nav li {
+        /* style rules for list items 
+        NOTE: use of Google Fonts style Syne Mono*/
+        font-family: "Syne Mono", Arial, sans-serif;
+        font-weight: bold;
+        display: inline-block;
+        font-size: 1.25em;
+        border: 1px solid #f6eee4;
+    }
+    
+    nav li a {
+        /* style rules for link elements inside of list items */
+        display: block;
+        color: #f6eee4;
+        padding: 0.5em;
+        text-decoration: none;
+    }
+    
+    .grid {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 10px;
+    }
+
+    aside {
+        display: block;
+        /* align-self: stretch; */
+        height: auto;
+        text-align: center;
+        margin-top: 0px;
+        border-style: solid;
+        max-width: 100%;
+        padding: 2%;
+        /* border-width: 5px;
+        border-color: #f6eee4; */
+        background: linear-gradient(to top left, #fff, rgb(30, 79, 168));
+        box-shadow: 5px 5px 2px #000;
+    }
+
+    aside h1 {
+        color: #fff;
+        text-shadow: 1px 2px 2px #000;
+    }
+    
+    video {
+        max-width: 100%;
+        display: block;
+        border-radius: 20px;
+        margin-top: 2%;
+    }
+
+    audio {
+        max-width: 100%;
+    }
+
+    figcaption {
+        display: block;
+    }
+
+    .frame {
+        position: relative;
+        max-width: 100%;
+        margin: 2% auto;
+    }
+
+    .figcap {
+        /* set up figure captions styling */
+        position: absolute;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        width: auto;
+        padding: 10px;
+        text-align: center;
+        font-family: "Emblema One", Arial, sans-serif;
+        font-size: 1.3em;
+        font-weight: bold;
+        border-radius: 0 0 20px 20px;
+    }
+
+    /* Specific Homepage settings (index.html) */
+    .index_header {
+        /* Homepage: Center Header line between images left & right */
+        width: 40%;
+        text-align: center;
+        float: left;
+    }
+
+    /* Style rules for footer content */
+    .copyright {
+        float: left;
+        padding: 0 5%;
+    }
+
+    .social {
+        float: right;
+        width: 25%;
+    }
+}
+
+/* Set view for standard desktop viewport */
+@media screen and (min-width: 1000px) {
+    /* Switch off mobile elements and activate tab-desk elements */
+    .desktop {
+        display: block;
+    }
+
+    .tablet {
+        display: none;
+    }
+
+    .mobile-tablet {
+        display: none;
+    }
+
+    /* Sytle rules for navigation area */
+    nav li {
+        font-size: 1.5em;
+    }
+
+    nav li a {
+        padding: 0.5em 1.5em;
+    }
+
+    /* Style Rules for Pseudo-class elements */    
+    nav li a:hover {
+        /* hover effect on navigation elements */
+        color: #2a1f14;
+        background-color: #f6eee4;
+    }
+
+    /* Style elements for skip to content */
+    .skip {
+        position: absolute;
+        left: -999px;
+    }
+
+    .skip:focus {
+        color: #fff;
+        background-color: #000;
+        text-decoration: none;
+        padding: 0.5%;
+        top: auto;
+        left: auto;
+        right: 1px;
+        z-index: 1;
+    }
+    
+    .discussion_space {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .index_header {
+        display: block;
+        width: 40%;
+        text-align: center;
+        float: left;
+        margin: 0 auto;
+    }
+    
+    section {
+        display: inline-block;
+        margin: 0 auto;
+        border-style: solid;
+        padding: 5px;
+        background: linear-gradient(to bottom right, #fff, rgb(28, 138, 52))
+    }
+
+    section h1 {
+        text-align: center;
+        background: #2a1f14;
+        color: #fff;
+    }
+
+    section h2 {
+        text-align: center;
+    }
+
+    section li {
+        margin-left: 0em;
+        margin-top: 15px;
+        list-style: none;
+    }
+
+    .subtopic2 {
+        display: inline-block;
+    }
+
+    section img {
+        border-radius: 20px;
+
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 10px;
+    }
+
+    aside {
+        grid-column: 1/span 3;
+    }
+
+    .frame {
+        position: relative;
+        max-width: 100%;
+        margin: 2% auto;
+    }
+
+    .figcap {
+        /* set up figure captions styling */
+        position: absolute;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        width: auto;
+        padding: 10px;
+        text-align: center;
+        font-family: "Emblema One", Arial, sans-serif;
+        font-size: 1.3em;
+        font-weight: bold;
+        border-radius: 0 0 20px 20px;
+    }
+                                                                /* end area of change */
+}
+
+/* Set view for Large Desktop Viewport */
+@media screen and (min-width: 1921px) {
+    body {
+        background: linear-gradient(#f6eee4, #78593a);
+    }
+
+    #wrapper {
+        width: 1920px;
+        margin:0 auto;
+    }
+
+    main {
+        background-color: #f6eee4;
+    }
+
+    section {
+        font-size: 1.3em;
+    }
+
+    .frame {
+        position: relative;
+        max-width: 100%;
+        margin: 2% auto;
+    }
+
+    .figcap {
+        /* set up figure captions styling */
+        position: absolute;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        width: auto;
+        padding: 10px;
+        text-align: center;
+        font-family: "Emblema One", Arial, sans-serif;
+        font-size: 1.3em;
+        font-weight: bold;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .grid {
+        grid-template-columns: 25% 25% 25% auto;
+    }
+
+    aside {
+        grid-column: none;
+    }
+
+    aside h1 {
+        padding: 5%;
+    }
+
+    .edWarning {
+        font-size: 1.5em;
+        background-color: #f6eee4;
+        margin: 0;
+        padding: 1% 0;
+        
+    }
+}
+
+/* Syle Rules for Print formatting */
+@media print {
+    /* Removing navigation */
+    nav {
+        display: none;
+    }
+
+    body {
+        color: #000;
+    }
+
+    footer a {
+        color: #000;
+    }
+
+                                                                /* This block will most likely be changed to the GRID STRUCTURE */
+
+    section {
+        border: none;
+    }
+
+    .subtopic2 ul li a {
+        color: #000;
+    }
+
+    section h1 {
+        color: #000;
+    }
+
+                                                                /* end area of change */
+}

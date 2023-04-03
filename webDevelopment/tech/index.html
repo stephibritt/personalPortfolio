@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!-- 
+Edited by: John Breeden and Stephen Britt
+File Name: index.html
+Date: 03/04/2022
+-->
+
+<html lang="en">
+    <head>
+        <title>Introduction | Brave New Technology</title>                      <!-- FINAL ELEMENT: descriptive title -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- meta tag for display size-->
+        <meta name="author" content="Stephen Britt and John Breeden">           <!-- FINAL ELEMENT: meta description -->
+        <meta name="description" content="Brave New Technologies is an instructional tool to demonstrate new developments in computing that will revolutionize the way users interact with technology.">
+        <link rel="stylesheet" href="css/styles.min.css"> <!--link tag connecting to style sheet-->
+        <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet"> <!-- Syne Mono custom font from Google Fonts-->
+
+        <!-- Favicon installation-->                                                                <!-- FINAL ELEMENT: favicon -->
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+        <link rel="icon" sizes="192x192" href="images/android-chrome-192x192.png">
+    </head>
+
+    <body>
+        <!-- Skip to Content Link -->
+        <a class="skip" href="#content">Skip to Content</a>                                         <!-- FINAL ELEMENT: skip to content -->
+        
+        <!-- Mobile Nav -->
+        <nav class="mobile-nav">                                                                    <!-- FINAL ELEMENT: hamburger menu -->
+            <div id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="blockchain.html">Blockchain</a>
+                <a href="cloudcomputing.html">Cloud Computing</a>
+                <a href="metaverse.html">Life in the Metaverse</a>
+                <a href="virtualandmore.html">Virtual and More</a>
+                <a href="glossary.html">Glossary</a>
+            </div>
+
+            <a class="nav-icon" onclick="menu()">
+                <div id="icon">&#9776;</div>
+            </a>
+        </nav>
+
+        <!--header section-->        
+        <header> <!--page banner-->
+            <a href="index.html"><img src="images/posed_android_header.jpg" alt="Future Technology Image"></a>
+        </header>
+        
+        <!--Navigation Section-->
+        <nav class="tab-desk">
+            <ul>
+                <li><a href="index.html">Home</a></li>  
+                <li><a href="blockchain.html">Blockchain</a></li>
+                <li><a href="cloudcomputing.html">Cloud Computing</a></li>
+                <li><a href="metaverse.html">Life in the Metaverse</a></li>
+                <li><a href="virtualandmore.html">Virtual and More</a></li>
+                <li><a href="glossary.html">Glossary</a></li>
+            </ul>
+        </nav>
+        
+        <!--Main Body Section-->
+        <main id="content">
+            
+            <hr>
+            
+            <article>                           <!-- FINAL ELEMENT: article -->
+                <div class="animate">           <!-- FINAL ELEMENT: keyframes element -->
+                    <img src="images/blockchain-banner.jpg" alt="blockchain image" Class="index_left_image tab-desk">
+                    <div class="index_header">
+                        <h1>Brave New Technologies</h1>
+                        <h2>As the needs of users and the advancements of technology continue to grow, these three technologies are set to fulfill user needs and create new uses that have yet to be dreamed of.</h2>
+                    </div>
+                    <img src="images/blockchain-banner.jpg" alt="blockchain image" Class="index_right_image tab-desk">
+                </div>  
+                
+                <div class="index_button_block">
+                    <div class="grid">
+                        <section class="link-hover">        <!-- FINAL ELEMENT: section -->             <!-- FINAL ELEMENT: css transform element -->
+                            <a href="blockchain.html">
+                            <h1>Blockchain</h1>
+                            <h2>Learn more about Blockchain technology</h2></a>
+                        </section>
+                        <section class="link-hover">        <!-- FINAL ELEMENT: section -->             <!-- FINAL ELEMENT: css transform element -->
+                            <a href="cloudcomputing.html">
+                            <h1>Cloud Computing</h1>
+                            <h2>Learn more about Cloud Computing</h2></a>
+                        </section>
+                        <section class="link-hover">        <!-- FINAL ELEMENT: section -->             <!-- FINAL ELEMENT: css transform element -->
+                            <a href="metaverse.html">
+                            <h1>the Metaverse</h1>
+                            <h2>Learn more about the Metaverse</h2></a>
+                        </section>
+                    </div>
+                </div>
+            </article>  
+
+
+        </main>
+        
+        <!--Footer Section & Contact Information-->
+        <footer>
+            <div class="copyright">
+                <p>&copy; Copyright 2022. All Rights Reserved.</p>
+                <p>Edited by: John Breeden and Stephen Britt</p>
+                <p>Contact Us:
+                <br>
+                <a href="mailto:sdbritt@senators.ws.edu">sdbritt@senators.ws.edu</a>
+                <br>
+                <a href="mailto:jabreeden4@senators.ws.edu">jabreeden4@senators.ws.edu</a></p>
+            </div>
+
+            <div class="social">
+                <a href="https://www.facebook.com" target="_blank"><img src="images/facebook-logo.png" alt="Facebook logo"></a>         <!-- FINAL ELEMENT: social media links -->
+                <a href="https://www.twitter.com" target="_blank"><img src="images/twitter-logo.png" alt="Twitter logo"></a>
+                <a href="https://www.linkedin.com" target="_blank"><img src="images/linkedin-logo.PNG" alt="LinkedIn logo"></a>
+            </div>
+        </footer>
+        
+        <script src="scripts/script.js"></script>
+    </body>
+</html>

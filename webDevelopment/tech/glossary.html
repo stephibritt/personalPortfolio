@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!-- 
+Edited by: John Breeden and Stephen Britt
+File Name: glossary.html
+Date: 03/04/2022
+-->
+
+<html lang="en">
+    <head>
+        <title>Glossary | Brave New Technology</title>                          <!-- FINAL ELEMENT: descriptive title -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- meta tag for display size-->
+        <meta name="author" content="Stephen Britt and John Breeden">           <!-- FINAL ELEMENT: meta description -->
+        <meta name="description" content="A brief explanation of terminology used in Brave New Technology along with citations.">
+        <link rel="stylesheet" href="css/styles.min.css"> <!--link tag connecting to style sheet-->
+        <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet"> <!-- Syne Mono custom font from Google Fonts-->
+
+        <!-- Favicon installation-->                                                        <!-- FINAL ELEMENT: favicon -->
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+        <link rel="icon" sizes="192x192" href="images/android-chrome-192x192.png">
+    </head>
+
+    <body>
+        <!-- Skip to Content Link -->
+        <a class="skip" href="#content">Skip to Content</a>                                 <!-- FINAL ELEMENT: skip to content -->
+        
+        <div id="container">
+            <!-- Mobile Nav -->
+            <nav class="mobile-nav">                                                        <!-- FINAL ELEMENT: hamburger menu -->
+                <div id="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="blockchain.html">Blockchain</a>
+                    <a href="cloudcomputing.html">Cloud Computing</a>
+                    <a href="metaverse.html">Life in the Metaverse</a>
+                    <a href="virtualandmore.html">Virtual and More</a>
+                    <a href="glossary.html">Glossary</a>
+                </div>
+    
+                <a class="nav-icon" onclick="menu()">
+                    <div id="icon">&#9776;</div>
+                </a>
+            </nav>
+            
+            <!--header section-->            
+            <header> <!--page banner-->
+                <a href="index.html"><img src="images/posed_android_header.jpg" alt="Future Technology Image"></a>
+            </header>
+            
+            <!--Navigation Section-->
+            <nav class="tab-desk">
+                <ul>
+                    <li><a href="index.html">Home</a></li>  
+                    <li><a href="blockchain.html">Blockchain</a></li>
+                    <li><a href="cloudcomputing.html">Cloud Computing</a></li>
+                    <li><a href="metaverse.html">Life in the Metaverse</a></li>
+                    <li><a href="virtualandmore.html">Virtual and More</a></li>
+                    <li><a href="glossary.html">Glossary</a></li>
+                </ul>
+            </nav>
+
+            <!--Main Body Section-->
+            <main id="content">
+                <h1>Glossary and References</h1>
+
+                <article>
+                    <h1 class="glossary_header">Definitions</h1>
+                    <div class="glossary_entry">
+                        <dl>
+                            <dt id="digitalAssets">
+                               Digital Assets 
+                            </dt>
+                            <dd>
+                                Digital assets are electronically-created forms of information that have a definite value.
+                            </dd>
+                            <dd>
+                                Examples include: NFTs, Etherium, BitCoin.
+                            </dd>
+                            <dt id="distributedDatabases">
+                                Distributed Databases
+                            </dt>
+                            <dd>
+                                Distributed systems, including distributed databases, are systems that are not located on one central computer or even one network.  Instead, they are spread across multiple computers across different locations.
+                            </dd>
+                            <dd>
+                                Distributed systems can be owned by one entity, or may be the shared computing power of computers owned by many different users across the world.
+                            </dd>
+                            <dt id="hashedValues">
+                                Hashed Values
+                            </dt>
+                            <dd>
+                                A hashed value is data that has been scrambled in a complex, algorithmic way to make identifying or changing the source data extremely difficult.
+                            </dd>
+                            <dd>
+                                Hashing is frequently used for securing passwords and private data. In the blockchain, the information of each element of the chain is hashed together to generate a link used to unique identify the next block in the chain.
+                            </dd>
+                            <dt id="extranet">
+                                Extranet
+                            </dt>
+                            <dd>
+                                An Extranet is a network structure that connects a company's computer network to the trusted networks of other companies or to individuals that the company trusts.
+                            </dd>
+                            <dd>
+                                Extranet connections may be through a Virtual Private Network, over a secured Internet connection, or by direct physical connections.
+                            </dd>
+                        </dl>
+
+                    </div>
+                    <br>
+                    <h1 class="glossary_header">References</h1>
+                    <div class="glossary_entry">
+                        <dl>
+                            <dt id="SnowCrash" onclick="displayInfo1()">
+                                Snow Crash
+                            </dt>
+                            <dd class="ref-info" id="ref-info1">
+                                <p>Stephenson, Neal, and Kodaj Daniel. Snow Crash. Metropolis Media, 1992.</p>
+                                <a href="https://www.goodreads.com/book/show/603262.Snow_Crash" target="_blank">Click here for Snow Crash's GoodReads link.</a>
+                            </dd>
+
+                            <dt id="Neuromancer" onclick="displayInfo2()">
+                                Neuromancer
+                            </dt>
+                            <dd class="ref-info" id="ref-info2">
+                                <p>Gibson, William. Neuromancer. Penquin Group, 1984.</p>
+                                <a href="https://www.goodreads.com/book/show/22328.Neuromancer" target="_blank">Click here for Neuromancer's GoodReads link.</a>
+                            </dd>
+
+                            <dt id="ReadyPlayerOne" onclick="displayInfo3()">
+                                Ready Player One
+                            </dt>
+                            <dd class="ref-info" id="ref-info3">
+                                <p>Cline, Ernest, and Aa Ralph van Der. Ready Player One. Q, 2018.</p>
+                                <a href="https://www.goodreads.com/book/show/9969571-ready-player-one" target="_blank">Click here for Ready Player One's GoodReads link.</a>
+                            </dd>
+                            <dt id="SecondLife" onclick="displayInfo4()">
+                                Second Life
+                            </dt>
+                            <dd class="ref-info" id="ref-info4"> <!--ABSOLUTE LINK opens in separate browser tab-->
+                                <a href="https://secondlife.com/" target="_blank">Click here to go to www.secondlife.com</a>
+                            </dd>
+                            <dt onclick="displayInfo5()">
+                                Blockchain Basics: A Non-Technical Introduction in 25 Steps
+                            </dt>
+                            <dd class="ref-info" id="ref-info5">
+                                <p>DRESCHER, Daniel. Blockchain Basics: A Non-Technical Introduction in 25 Steps. Apress, 2017.</p>
+                                <a href="https://www.goodreads.com/book/show/34137265-blockchain-basics" target="_blank">Click here for Blockchain Basics' GoodReads link.</a>
+                                <a href="http://www.blockchain-basics.com/" target="_blank">Click here for supplementary information from Blockchain Basics.</a>
+                            </dd>
+                        </dl>
+                    </div>
+
+                </article>            
+            </main>
+
+            <!--Footer Section & Contact Information-->
+            <footer>
+                <div class="copyright">
+                    <p>&copy; Copyright 2022. All Rights Reserved.</p>
+                    <p>Edited by: John Breeden and Stephen Britt</p>
+                    <p>Contact Us:
+                    <br>
+                    <a href="mailto:sdbritt@senators.ws.edu">sdbritt@senators.ws.edu</a>
+                    <br>
+                    <a href="mailto:jabreeden4@senators.ws.edu">jabreeden4@senators.ws.edu</a></p>
+                </div>
+
+                <div class="social">
+                    <a href="https://www.facebook.com" target="_blank"><img src="images/facebook-logo.png" alt="Facebook logo"></a>         <!-- FINAL ELEMENT: social media links -->
+                    <a href="https://www.twitter.com" target="_blank"><img src="images/twitter-logo.png" alt="Twitter logo"></a>
+                    <a href="https://www.linkedin.com" target="_blank"><img src="images/linkedin-logo.PNG" alt="LinkedIn logo"></a>
+                </div>
+            </footer>
+        </div>
+        
+        <script src="scripts/script.js"></script>
+    </body>
+</html>
