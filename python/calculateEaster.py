@@ -15,7 +15,22 @@ def main():
         # ask the user for a year to calculate
         year = int(input("\nWhat year would you like to use? "))
         
-        # use the given year in the anonymous gregorian computus algorith to find the date of easter.
+        CalculateEaster(year)
+
+        # ask if the user would like to run another calculation
+        repeat = input("\nWould you like to calculate another Easter? (Y/n): ")
+
+        # while the user enters anything other than 'Y' or 'N'
+        while not (repeat.upper() == "Y" or repeat.upper() == "N"):
+            # inform the user of the two options and ask for valid input
+            print("\nPlease enter 'Y' to continue or 'N' to quit.")
+            repeat = input("\nWould you like to calculate another Easter? (Y/n): ")
+        # end while
+    # end while
+# end function
+
+def CalculateEaster(year):
+    # use the given year in the anonymous gregorian computus algorith to find the date of easter.
         a = year % 19
         b = floor(year/100)
         c = year % 100
@@ -33,19 +48,6 @@ def main():
 
         # print the results in the desired format
         print(f"\nIn {year}, Easter falls on {month}/{day}.")
-        
-        # print("In ", year, ", Easter falls on ", month, "/", day, ".", sep = "")
-
-        # ask if the user would like to run another calculation
-        repeat = input("\nWould you like to calculate another Easter? (Y/n): ")
-
-        # while the user enters anything other than 'Y' or 'N'
-        while not (repeat.upper() == "Y" or repeat.upper() == "N"):
-            # inform the user of the two options and ask for valid input
-            print("\nPlease enter 'Y' to continue or 'N' to quit.")
-            repeat = input("\nWould you like to calculate another Easter? (Y/n): ")
-        # end while
-    # end while
 # end function
 
 # DO NOT MODIFY CODE BELOW THIS LINE
