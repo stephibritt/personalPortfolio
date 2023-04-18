@@ -15,7 +15,10 @@ def main():
         # ask the user for a year to calculate
         year = int(input("\nWhat year would you like to use? "))
         
-        CalculateEaster(year)
+        easter = CalculateEaster(year)
+
+        # print the results in the desired format
+        print(f"\nIn {year}, Easter falls on {easter}.")
 
         # ask if the user would like to run another calculation
         repeat = input("\nWould you like to calculate another Easter? (Y/n): ")
@@ -46,9 +49,42 @@ def CalculateEaster(year):
         month = floor((h + l - 7 * m + 114) / 31)
         day = 1 + ((h + l - 7 * m + 114) % 31)
 
-        # print the results in the desired format
-        print(f"\nIn {year}, Easter falls on {month}/{day}.")
+        if month == 3:
+             month = "March"
+        else:
+             month = "April"
+        # end if
+        
+        day = ConvertToOrdinal(day)
+
+        # return the results in the desired format
+        return f"{month} {day}"
 # end function
+
+def ConvertToOrdinal(value):
+    """
+    Converts zero or a *postive* integer (or their string 
+    representations) to an ordinal value.
+    
+    """
+    try:
+        value = int(value)
+    except ValueError:
+        return value
+
+    if value % 100//10 != 1:
+        if value % 10 == 1:
+            ordval = u"%d%s" % (value, "st")
+        elif value % 10 == 2:
+            ordval = u"%d%s" % (value, "nd")
+        elif value % 10 == 3:
+            ordval = u"%d%s" % (value, "rd")
+        else:
+            ordval = u"%d%s" % (value, "th")
+    else:
+        ordval = u"%d%s" % (value, "th")
+
+    return ordval
 
 # DO NOT MODIFY CODE BELOW THIS LINE
 if __name__ == "__main__":
