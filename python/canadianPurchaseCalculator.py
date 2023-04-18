@@ -1,8 +1,5 @@
-#================================================================================#
-#  AUTHOR: Stephen Britt
-#  E-MAIL: sdbritt@senators.ws.edu
-#  EDITED: 3/27/2023
-#================================================================================#
+#!/c/Users/steph/AppData/Local/Programs/Python/Python311/python.exe
+# the location of the python.exe
 
 def main():
     # output the usage and purpose of the program

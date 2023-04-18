@@ -1,3 +1,6 @@
+#!/c/Users/steph/AppData/Local/Programs/Python/Python311/python.exe
+# the location of the python.exe
+
 import random as rnd
 
 def main():
@@ -19,4 +22,7 @@ def main():
     print(f"Your starting level is: {level}")
 # end main
 
-main()
+# DO NOT MODIFY CODE BELOW THIS LINE
+if __name__ == "__main__":
+    main()
+# end if
