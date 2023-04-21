@@ -117,7 +117,7 @@ def main():
 
             break
         except:
-            print("\nThe entered value must be a number.")
+            print("\nThe entered value must be an integer.")
         # end try
     # end while
 
@@ -127,15 +127,15 @@ def main():
     
     while True:
         try:
-            cardsToDeal = int(input("\nHow many cards would you like to deal? "))
+            cardsToDeal = int(input("\nEnter a number of cards to deal: "))
             
             while cardsToDeal <= 0:
-                cardsToDeal = int(input("\nAt least one card must be dealt. Please enter a number of cards: "))
+                cardsToDeal = int(input("\nAt least one card must be dealt: "))
             # end while
 
             break
         except:
-            print("\nThe entered value must be a number.")
+            print("\nThe entered value must be an integer.")
         # end try
     # end while
     
