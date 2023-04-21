@@ -7,6 +7,8 @@
 #  EDITED: 10/14/2021
 #================================================================================#
 
+import datetime
+
 def main():
     print("Student Bio Web Page Generator")
     print("This program generates a web page based on entered information and saves it in the current directory.\n")
@@ -27,8 +29,13 @@ def main():
     # end while
 
     gradYear = input("Graduation year: ")
-    while len(gradYear) < 1:
-        gradYear = input("Invalid input. Must enter one or more characters. Enter your expected graduation year: ")
+
+    while not (gradYear.isnumeric()):
+        gradYear = input("Invalid input. Enter your expected graduation year: ")
+    # end while
+
+    while int(gradYear) < 1900 or int(gradYear) > datetime.date.today().year:
+        gradYear = input("Invalid input. Enter your expected graduation year: ")
     # end while
 
     bioSentence = input("Hobbies and interests: ")
