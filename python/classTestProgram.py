@@ -1,10 +1,14 @@
+#!/c/Users/steph/AppData/Local/Programs/Python/Python311/python.exe
+# the location of the python.exe
+
 #================================================================================#
 #  AUTHOR: Stephen Britt
 #  E-MAIL: sdbritt@senators.ws.edu
-#  CREATED: 11/15/2021
+#  EDITED: 10/14/2021
 #================================================================================#
 
 class Vehicle:
+    # class constructor
     def __init__(self, make, model, year):
         self.setMake(make)
         self.setModel(model)
@@ -12,8 +16,7 @@ class Vehicle:
         self.__speed = 0
     # end method
 
-    # Mutators
-
+    # Mutators (setters)
     def setMake(self, make):
         if len(make) > 0:
             self.__make = make
@@ -54,8 +57,7 @@ class Vehicle:
         # end if
     # end method
 
-    # Accesssors
-
+    # Accesssors (getters)
     def getMake(self):
         return self.__make
     # end method
@@ -79,12 +81,14 @@ class Vehicle:
 
 def main():
     print("Vehicle Class Test Program\n")
+
+    vehicleMake = input("Enter the vehicle make: ")
+    vehicleModel = input("Enter the vehicle model: ")
+    vehicleYear = input("Enter the vehicle year: ")
     
-    myCarObj = Vehicle("Chevy", "Spark", 2015)
+    myCarObj = Vehicle(vehicleMake, vehicleModel, int(vehicleYear))
 
-    timesToAccelerate = 5
-
-    timesToDecelerate = 5
+    timesToAccelerate = int(input("\nHow many times to accellerate? "))
 
     print("Accelerating...")
     for _ in range(timesToAccelerate):
@@ -92,10 +96,12 @@ def main():
         print(f"Current speed: {myCarObj.getSpeed()}")
     # end for
 
+    timesToDecelerate = int(input("\nHow many times to brake? "))
+
     print("\nBraking...")
     for _ in range(timesToDecelerate):
         myCarObj.decelerate()
-        print(myCarObj)
+        print(f"Current speed: {myCarObj.getSpeed()}")
     # end for
 # end function
 
