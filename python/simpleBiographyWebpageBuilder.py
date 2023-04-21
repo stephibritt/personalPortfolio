@@ -34,7 +34,7 @@ def main():
         gradYear = input("Invalid input. Enter your expected graduation year: ")
     # end while
 
-    while int(gradYear) < 1900 or int(gradYear) > datetime.date.today().year:
+    while int(gradYear) < (datetime.date.today().year - 100) or int(gradYear) > (datetime.date.today().year + 10):
         gradYear = input("Invalid input. Enter your expected graduation year: ")
     # end while
 
