@@ -1,7 +1,10 @@
+#!/c/Users/steph/AppData/Local/Programs/Python/Python311/python.exe
+# the location of the python.exe
+
 #================================================================================#
 #  AUTHOR: Stephen Britt
 #  E-MAIL: sdbritt@senators.ws.edu
-#  CREATED: 10/26/2021
+#  EDITED: 10/14/2021
 #================================================================================#
 
 from random import randrange
@@ -9,7 +12,7 @@ from random import randrange
 
 def main():
     
-    print("This program generates a series of public IP addresses and writes them to a file.\n")
+    print("This program generates a series of random public IPV4 addresses and writes them to a file in the current directory.\n")
     
     while True:
         try:
@@ -27,15 +30,24 @@ def main():
     # end while
     print() 
 
-    FILE_NAME = "Chapter 7\\ipList.txt" 
+    FILE_NAME = "ipList.txt" 
     ipList = []
 
     count = 0
     for _ in range(networks):
         count += 1
-        ipList.append(getIpAddress())
+
+        ipAddress = getIpAddress()
+        
+        while ipAddress in ipList:
+            ipAddress = getIpAddress()
+        # end while
+
+        ipList.append(ipAddress)
         print(f"Address {count}: {ipList[(count - 1)]}")
     # end for
+
+    ipList.sort()
 
     writeFile(FILE_NAME, ipList)
 
@@ -46,9 +58,10 @@ def main():
 def writeFile(fileName, ipList):
     try:
         fileObj = open(fileName, "w")
-
+        
+        fileObj.write(f"The following {len(ipList)} IPV4 addresses were generated:\n")
         for item in ipList:
-            fileObj.write(item + "\n")
+            fileObj.write("\n" + item)
         # end for
 
         fileObj.close()
