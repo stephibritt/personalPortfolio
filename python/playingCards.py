@@ -32,27 +32,31 @@ class Card:
     # end method
 
     def __str__(self):
-        return f"{self.__rank} of {self.__suit}"
+        return f"{self.getRank()} of {self.getSuit()}"
     # end method
 # end class
 
 class Deck:
-    def __init__(self):
+    def __init__(self, numberOfShuffles):
         self.__cards = []
 
         self.__buildDeck()
-
-        self.shuffle()
+        
+        for i in range(numberOfShuffles):
+            self.shuffle()
+        # end for
     # end method
 
-    # Mutator Methods
+    # Accessors (getters)
+    def getNumberOfCards(self):
+        return len(self.__cards)
+    # end get
 
+    # Mutators (setters)
     def __buildDeck(self):
         value = 2
-        rank = value
-        
-        for value in range(13):
-            value += 1
+
+        for _ in range(13):
 
             if value >= 2 and value <= 10:
                 rank = value
@@ -62,14 +66,16 @@ class Deck:
                 rank = "Queen"
             elif value == 13:
                 rank = "King"
-            else: # value == 14:
+            elif value == 14:
                 rank = "Ace"
             # end if
 
-            self.__cards.append(Card(rank, "Black", "Spades", value))
-            self.__cards.append(Card(rank, "Red", "Diamonds", value))
-            self.__cards.append(Card(rank, "Black", "Clubs", value))
             self.__cards.append(Card(rank, "Red", "Hearts", value))
+            self.__cards.append(Card(rank, "Black", "Clubs", value))
+            self.__cards.append(Card(rank, "Red", "Diamonds", value))
+            self.__cards.append(Card(rank, "Black", "Spades", value))
+            
+            value += 1
         # end for
     # end method
 
@@ -90,22 +96,60 @@ class Deck:
             return topCard
         else:
             raise Exception("No cards remain in the deck.")
+        # end if
     # end method
 
     def __str__(self):
-        return f"There are {len(self.__cards)} cards remaining in the deck."
+        return f"There are {self.getNumberOfCards()} cards remaining in the deck."
     # end method
 # end class
 
 def main():
-    print("Playing Cards Test Program\n")
+    print(f"Playing Cards Test Program")
+    
+    while True:
+        try:
+            numberOfShuffles = int(input("\nEnter a number of times to shuffle the deck: "))
+            
+            while numberOfShuffles < 0:
+                numberOfShuffles = int(input("\nA number of shuffles must be equal to or greater than zero: "))
+            # end while
+
+            break
+        except:
+            print("\nThe entered value must be a number.")
+        # end try
+    # end while
+
+    myDeckObj = Deck(numberOfShuffles)
+
+    print(f"\nA deck of {myDeckObj.getNumberOfCards()} was generated and shuffled {numberOfShuffles} times.")
+    
+    while True:
+        try:
+            cardsToDeal = int(input("\nHow many cards would you like to deal? "))
+            
+            while cardsToDeal <= 0:
+                cardsToDeal = int(input("\nAt least one card must be dealt. Please enter a number of cards: "))
+            # end while
+
+            break
+        except:
+            print("\nThe entered value must be a number.")
+        # end try
+    # end while
     
     count = 1
-    myDeckObj = Deck()
-    for _ in range(10):
-        print(f"Card {count}: {myDeckObj.drawCard()}")
-        print(f"  {myDeckObj}")
-        count += 1
+
+    for _ in range(cardsToDeal):
+        try:
+            print(f"\nCard {count}: {myDeckObj.drawCard()}")
+            print(f"    {myDeckObj}")
+
+            count += 1
+        except:
+            break
+        # end try
     # end for
 # end function
 
