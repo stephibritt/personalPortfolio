@@ -9,7 +9,6 @@
 
 from random import randrange
 
-
 def main():
     
     print("This program generates a series of random public IPV4 addresses and writes them to a file in the current directory.\n")

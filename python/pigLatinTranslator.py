@@ -1,7 +1,10 @@
+#!/c/Users/steph/AppData/Local/Programs/Python/Python311/python.exe
+# the location of the python.exe
+
 #================================================================================#
 #  AUTHOR: Stephen Britt
 #  E-MAIL: sdbritt@senators.ws.edu
-#  CREATED: 10/29/2021
+#  EDITED: 10/14/2021
 #================================================================================#
 
 def main():
@@ -11,7 +14,7 @@ def main():
     while True:      
         try:
             # Get file path from user
-            filePath = "Chapter 8\\" + input("File path: ")
+            filePath = input("File path: ")
 
             # Attempt to open and read contents of specified file and 
             # Split the text into a list based on newline character (each line of text becomes an element in list)
