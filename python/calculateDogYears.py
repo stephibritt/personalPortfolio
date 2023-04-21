@@ -1,6 +1,12 @@
 #!/c/Users/steph/AppData/Local/Programs/Python/Python311/python.exe
 # the location of the python.exe
 
+#================================================================================#
+#  AUTHOR: Stephen Britt
+#  E-MAIL: sdbritt@senators.ws.edu
+#  EDITED: 10/14/2021
+#================================================================================#
+
 def main():
     print("This program calculates a dog's approximate age in \"dog years\" based on human years.")
     repeat = "Y"
