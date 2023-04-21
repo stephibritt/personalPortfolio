@@ -8,8 +8,8 @@
 #================================================================================#
 
 def main():
-    print("Student Web Page Generator")
-    print("This program generates a web page based on entered information.\n")
+    print("Student Bio Web Page Generator")
+    print("This program generates a web page based on entered information and saves it in the current directory.\n")
 
     name = input("Name: ") 
     while len(name) < 1:        
@@ -43,7 +43,7 @@ def main():
 
 def writeBiography(fileName, name, major, college, gradYear, bioSentence):
     try:
-        fileObj = open(f"Chapter 6\\{fileName}", "w")
+        fileObj = open(f"{fileName}", "w")
     
         fileObj.write("<html>\n")
         fileObj.write(f"<head><title>{college} student: {name}</title></head>\n")
