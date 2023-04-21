@@ -59,7 +59,7 @@ def writeFile(fileName, ipList):
     try:
         fileObj = open(fileName, "w")
         
-        fileObj.write(f"The following {len(ipList)} IPV4 addresses were generated:\n")
+        fileObj.write(f"The following {len(ipList)} IPV4 addresses were randomly generated:\n")
         for item in ipList:
             fileObj.write("\n" + item)
         # end for
