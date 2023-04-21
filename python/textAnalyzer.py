@@ -1,18 +1,23 @@
+#!/c/Users/steph/AppData/Local/Programs/Python/Python311/python.exe
+# the location of the python.exe
+
 #================================================================================#
 #  AUTHOR: Stephen Britt
 #  E-MAIL: sdbritt@senators.ws.edu
-#  CREATED: 11/4/2021
+#  EDITED: 10/14/2021
 #================================================================================#
 
 from os import readlink
 
+from tkinter import filedialog
 
 def main():
     print("Text File Analyzer\n")
     
     while True:
         try:
-            fileName = "Chapter 9\\" + input("Enter a file name: ")
+            fileName = filedialog.askopenfilename()
+            
             print()
 
             fileObj = open(fileName, "r")
@@ -23,9 +28,9 @@ def main():
 
             break
         except FileNotFoundError:
-            print("The specified file does not exist.")
+            print("The specified file could not be found.")
         except:
-            print("The specified file cannot be opened.")
+            print("An unknown error occurred.")
         # end try
     # end while
 
