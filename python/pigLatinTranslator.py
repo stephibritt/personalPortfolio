@@ -7,6 +7,8 @@
 #  EDITED: 10/14/2021
 #================================================================================#
 
+from tkinter import filedialog
+
 def main():
     print("Pig Latin Translator\n")
     print("This program translates the contents of a text file to Pig Latin.\n")
@@ -14,7 +16,7 @@ def main():
     while True:      
         try:
             # Get file path from user
-            filePath = input("File path: ")
+            filePath = filedialog.askopenfilename()
 
             # Attempt to open and read contents of specified file and 
             # Split the text into a list based on newline character (each line of text becomes an element in list)
