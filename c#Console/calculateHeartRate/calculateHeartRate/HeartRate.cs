@@ -16,7 +16,7 @@ class HeartRate {
         } // end get
 
         set {
-            if (m_name == string.Empty) {
+            if (string.IsNullOrWhiteSpace(value)) {
                 throw new Exception("A name requires one or more characters.");
             } else {
                 m_name = value;
@@ -58,5 +58,13 @@ class HeartRate {
 
     public double GetMaxTargetHeartRate() {
         return GetMaxHeartRate() * .85;
+    } // end method
+
+    public override string ToString() {
+        return $"\nHeart rate information for {Name}:" +
+               $"\n    Age:                       {GetAge()} years old" +
+               $"\n    Maximum heart rate:        {GetMaxHeartRate():f1} beats/minute" +
+               $"\n    Minimum target heart rate: {GetMinTargetHeartRate():f1} beats/minute" +
+               $"\n    Maximum target heart rate: {GetMaxTargetHeartRate():f1} beats/minute";
     } // end method
 } // end class
