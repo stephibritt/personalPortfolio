@@ -16,24 +16,16 @@ def main():
         print("\nChoose an operation:")
         print("1: Calculate an hourly rate from an annual salary")
         print("2: Calculate an annual salary from an hourly rate")
+        print("3: Exit")
+        
+        operationChoice = input("\nUser choice: ")
 
-        while True:
-            try:
-                # get user input for the human age of the dog
-                operationChoice = int(input("\nUser choice: "))
-
-                # while the given value is less than zero
-                while not (operationChoice == 1 or operationChoice == 2):
-                    # inform the user that the entered number is invalid and ask for a valid entry
-                    operationChoice = int(input("\nA choice must be either 1 or 2: "))
-                # end while
-
-                break
-            except:
-                print("\nA choice must be a valid number.")
+        while not (operationChoice == "1" or operationChoice == "2" or operationChoice == "3"):
+            # inform the user that the entered number is invalid and ask for a valid entry
+            operationChoice = input("\nA choice must be either 1, 2, or 3: ")
         # end while
         
-        if operationChoice == 1:
+        if operationChoice == "1":
             while True:
                 try:
                     # get user input for the human age of the dog
@@ -52,7 +44,7 @@ def main():
             # end while
             
             print(f"\nAn annual salary of ${'{:,.2f}'.format(annualSalary)} equals an hourly rate of ${CalculateHourlyRate(annualSalary)}")
-        else:
+        elif operationChoice == "2":
             while True:
                 try:
                     # get user input for the human age of the dog
@@ -71,6 +63,8 @@ def main():
             # end while
             
             print(f"\nAn hourly rate of ${'{:,.2f}'.format(hourlyRate)} equals an annual salary of ${CalculateAnnualSalary(hourlyRate)}")
+        else:
+            exit()
         # end if
 
         repeat = input("\nWould you like to calculate another salary? (Y/n): ")
