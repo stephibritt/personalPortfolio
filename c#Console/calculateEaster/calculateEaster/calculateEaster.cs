@@ -73,27 +73,33 @@ class calculateEaster {
         return $"{monthString} {ordinalDay}";
     } // end method
 
-    private static string ConvertToOrdinal(double day) {
+    private static string ConvertToOrdinal(double num) {
         string ordinalString;
 
         try {
             // truncate the day into an integer
-            day = (int)day;
+            num = (int)num;
 
             // ensure that the value is positive
-            day = Math.Abs(day);
+            num = Math.Abs(num);
         } catch {
             throw new Exception("An error occurred while converting the value to a positive integer.");
         } // end try
 
-        if ((day % 10) == 1) {
-            ordinalString = $"{day}st";
-        } else if (day % 10 == 2) {
-            ordinalString = $"{day}nd";
-        } else if (day % 10 == 3) {
-            ordinalString = $"{day}rd";
+        double testVal = Math.Truncate((num % 100) / 10);
+
+        if (testVal != 1) {
+            if ((num % 10) == 1) {
+                ordinalString = $"{num}st";
+            } else if (num % 10 == 2) {
+                ordinalString = $"{num}nd";
+            } else if (num % 10 == 3) {
+                ordinalString = $"{num}rd";
+            } else {
+                ordinalString = $"{num}th";
+            } // end if
         } else {
-            ordinalString = $"{day}th";
+            ordinalString = $"{num}th";
         } // end if
 
         return ordinalString;
