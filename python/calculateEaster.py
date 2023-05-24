@@ -79,16 +79,19 @@ def ConvertToOrdinal(value):
         return value
     # end try
     
-    if value % 10 == 1:
-        ordval = f"{value}st"
-    elif value % 10 == 2:
-        ordval = f"{value}nd"
-    elif value % 10 == 3:
-        ordval = f"{value}rd"
+    if (value % 100) // 10 != 1:
+        if value % 10 == 1:
+            ordval = f"{value}st"
+        elif value % 10 == 2:
+            ordval = f"{value}nd"
+        elif value % 10 == 3:
+            ordval = f"{value}rd"
+        else:
+            ordval = f"{value}th"
     else:
         ordval = f"{value}th"
     # end if
-    
+	
     return ordval
 # end function
 
