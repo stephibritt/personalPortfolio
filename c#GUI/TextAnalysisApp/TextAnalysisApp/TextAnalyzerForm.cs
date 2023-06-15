@@ -123,7 +123,7 @@ namespace TextAnalysisApp {
             btnAnalyze.Enabled = false;
             m_fileWriter?.Close();
 
-            txtInput.Focus(); // returns focuse to the input textbox
+            txtInput.Focus(); // returns focus to the input textbox
         } // end event
 
         private void btnExit_Click(object sender, EventArgs e) {
@@ -183,7 +183,7 @@ namespace TextAnalysisApp {
 
             // if the user clicks OK, set the path to what is chosen
             if (ofd.ShowDialog() == DialogResult.OK) {
-                // assigne the chosen file path to a variable
+                // assign the chosen file path to a variable
                 txtFilename.Text = ofd.FileName;
             } // end if
 

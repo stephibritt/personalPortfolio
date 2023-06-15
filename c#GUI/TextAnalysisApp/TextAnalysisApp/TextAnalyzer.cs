@@ -133,7 +133,7 @@ class TextAnalyzer : IDisposable {
                 // If the word already exists in the word dictionary...
                 if (wordDictionary.ContainsKey(thisWord)) {
                     wordDictionary[thisWord]++;         // Increment this word's value by 1
-                } else {    // Otherwise, add the first to the dictionary with 1 occurrance (thus far)
+                } else {    // Otherwise, add the first to the dictionary with 1 occurrence (thus far)
                     wordDictionary.Add(thisWord, 1);    // Add word to dictionary as a key
                 } // end if
             } // end if
