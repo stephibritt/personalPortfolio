@@ -16,14 +16,16 @@ def main():
     while repeat.upper() == "Y":
         print("Generating 30 random keys:\n")
         
-        example = "xxxyy-OEM-NNNNNNN-zzzzz\n"
+        example = "xxxyy-OEM-nnnnnnn-zzzzz\n"
         print(f"Ex: {example.upper()}")
 
-        for i in range(1, 31):
-            print(f"{i:2}: {generateKey()}")
-        # end for
+        print(generatenNnnnnnn())
+
+        # for i in range(1, 31):
+        #     print(f"{i:2}: {generateKey()}")
+        # # end for
         
-        print("\nDone")
+        # print("\nDone")
 
         repeat = input("\nWould you like to generate another key? (Y/n): ")
         while not (repeat.upper() == "Y" or repeat.upper() == "N"):
@@ -34,11 +36,11 @@ def main():
 # end function
 
 def generateKey():
-    # example output xxxyy-OEM-NNNNNNN-zzzzz
+    # example output xxxyy-OEM-nnnnnnn-zzzzz
     # xxx must be a number in range 001 and 366
     # yy is last 2 digits of a number in range 095 and 103
     # OEM must remain as is
-    # the NNNNNNN must always start with 2 zeros, the rest can be anything as long as the summ 
+    # the nnnnnnn must always start with 2 zeros, the rest can be anything as long as the summ 
     # is divisible by 7 with no remainder
     # the zzzzz can be any set of numbers
 
@@ -80,11 +82,30 @@ def generateYy():
 # end function
 
 def generatenNnnnnnn():
-    # the NNNNNNN must always start with 2 zeros, the rest can be anything as long as the summ 
+    # the nnnnnnn must always start with 2 zeros, the rest can be anything as long as the summ 
     # is divisible by 7 with no remainder
-    nnnnnnn = str(rnd(95, 103))
-    
-    return nnnnnnn
+    n0 = "00"
+    nInt = str(rnd(0, 99999))
+
+    sum = 0
+    for i in nInt:
+        sum += int(i)
+    # end for
+
+    remTest = sum % 7
+
+    # while remTest != 0:
+    #     nInt = int(nInt) - 1
+    # # end while
+
+    nnnnnnn = n0 + nInt
+
+    while len(nnnnnnn) < 7:
+        zero = "0"
+        nnnnnnn = zero + nnnnnnn
+    # end while
+
+    return f"{sum}, {nnnnnnn}, {remTest}"
 # end function
 
 def generateZzzzz():
