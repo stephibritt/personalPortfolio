@@ -19,13 +19,9 @@ def main():
         example = "xxxyy-OEM-nnnnnnn-zzzzz\n"
         print(f"Ex: {example.upper()}")
 
-        print(generatenNnnnnnn())
-
-        # for i in range(1, 31):
-        #     print(f"{i:2}: {generateKey()}")
-        # # end for
-        
-        # print("\nDone")
+        for i in range(1, 31):
+            print(f"{i:2}: {generateKey()}")
+        # end for
 
         repeat = input("\nWould you like to generate another key? (Y/n): ")
         while not (repeat.upper() == "Y" or repeat.upper() == "N"):
@@ -46,7 +42,7 @@ def generateKey():
 
     xxx = generateXxx()
     yy = generateYy()
-    nnnnnnn = "nnnnnnn"
+    nnnnnnn = generatenNnnnnnn()
     zzzzz = generateZzzzz()
     string = f"{xxx}{yy}-OEM-{nnnnnnn}-{zzzzz}"
     
@@ -84,28 +80,21 @@ def generateYy():
 def generatenNnnnnnn():
     # the nnnnnnn must always start with 2 zeros, the rest can be anything as long as the summ 
     # is divisible by 7 with no remainder
-    n0 = "00"
-    nInt = str(rnd(0, 99999))
 
-    sum = 0
-    for i in nInt:
-        sum += int(i)
-    # end for
+    f = open("possible NNNNNNN values.txt", "r")
+    
+    lines = f.readlines()
 
-    remTest = sum % 7
+    f.close()
 
-    # while remTest != 0:
-    #     nInt = int(nInt) - 1
-    # # end while
+    randLine = rnd(0, 14281)
 
-    nnnnnnn = n0 + nInt
+    # file has 14282 lines, but the lines start indexing at zero
+    # so the range goes from zero to one less than the total lines
 
-    while len(nnnnnnn) < 7:
-        zero = "0"
-        nnnnnnn = zero + nnnnnnn
-    # end while
+    nnnnnnn = lines[randLine].rstrip("\n")
 
-    return f"{sum}, {nnnnnnn}, {remTest}"
+    return nnnnnnn
 # end function
 
 def generateZzzzz():
