@@ -13,7 +13,7 @@ def compute_closest_to_zero(ts):
     # end if
     
     pairs = []
-    closest = 9999999
+    closest = 999999999999999999999
 
     for i in ts:
         diff = abs(i)
@@ -36,14 +36,21 @@ def compute_closest_to_zero(ts):
 # Ignore and do not change the code below
 def main():
     # pylint: disable = C, W
-    ts1 = [-10, -10]
-    ts2 = [-275]
-    ts3 = [-15, -9, -8, -7, -2]
-    ts4 = [7, 5, 9, 1, 4]
-    ts5 = [7, 5, 9, -1, 4, 1]
-    with redirect_stdout(sys.stderr):
-        solution = compute_closest_to_zero(ts3)
-    print(solution)
+    ts1 = [7, 5, 9, 1, 4]
+    ts2 = [-273]
+    ts3 = [5526]
+    ts4 = [-15, -7, -9, -14, -12]
+    ts5 = [-10, -10]
+    ts6 = []
+    ts7 = [15, -7, 9, 14, 7, 12]
+
+    tests = [ts1, ts2, ts3, ts4, ts5, ts6, ts7]
+
+    for i in tests:
+        with redirect_stdout(sys.stderr):
+            solution = compute_closest_to_zero(i)
+        print(solution)
+    # end for
 
 
 if __name__ == "__main__":
