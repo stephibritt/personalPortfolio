@@ -1,0 +1,1 @@
+hack.js, remoteHack.js, updateScripts.js, ignoreServers.txt, filesToCopy.txt, ownedServers.txt
