@@ -41,7 +41,11 @@ export async function main(ns) {
 
       // if no root access, nuke it
       if ((!ns.hasRootAccess(hackHost))) {
-        ns.nuke(hackHost);
+        try {
+          ns.nuke(hackHost);
+        } catch {
+          continue;
+        }
       }
     }
 

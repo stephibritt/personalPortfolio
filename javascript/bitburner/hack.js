@@ -41,7 +41,11 @@ export async function main(ns) {
 
     // if no root access, nuke it
     if ((!ns.hasRootAccess(target))) {
-      ns.nuke(target);
+      try {
+        ns.nuke(target);
+      } catch {
+        continue;
+      }
     }
 
     // Infinite loop that continously hacks/grows/weakens the target server
