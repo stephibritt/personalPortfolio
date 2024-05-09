@@ -2,7 +2,7 @@
 export async function main(ns) {
   // used to update the chosen list of scripts.
   // files on the target server.
-  const servers = ns.scan();
+  const servers = ns.read("hackHosts.txt").split(", ");
 
   // initialize a list of the desired files
   const files = ns.read("filesToCopy.txt").split(", ");

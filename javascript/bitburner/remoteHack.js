@@ -18,29 +18,31 @@ export async function main(ns) {
     // get root access to the hackHosts
     // if the server is not in the ignore list...
     if ((!ignoreServers.includes(hackHost)) && (!purchasedServers.includes(hackHost))) {
-      // try to open all ports, if the .exe exists
-      if (ns.fileExists("BruteSSH.exe", "home")) {
-        ns.brutessh(hackHost);
-      }
+      let isRootAccessable = ns.hasRootAccess(hackHost);
 
-      if (ns.fileExists("FTPCrack.exe", "home")) {
-        ns.ftpcrack(hackHost);
-      }
+      // if no root access, attempt to gain
+      if (!(isRootAccessable)) {
+        // try to open all ports, if the .exe exists
+        if (ns.fileExists("BruteSSH.exe", "home")) {
+          ns.brutessh(hackHost);
+        }
 
-      if (ns.fileExists("relaySMTP.exe", "home")) {
-        ns.relaysmtp(hackHost);
-      }
+        if (ns.fileExists("FTPCrack.exe", "home")) {
+          ns.ftpcrack(hackHost);
+        }
 
-      if (ns.fileExists("HTTPWorm.exe", "home")) {
-        ns.httpworm(hackHost);
-      }
+        if (ns.fileExists("relaySMTP.exe", "home")) {
+          ns.relaysmtp(hackHost);
+        }
 
-      if (ns.fileExists("SQLInject.exe", "home")) {
-        ns.sqlinject(hackHost);
-      }
+        if (ns.fileExists("HTTPWorm.exe", "home")) {
+          ns.httpworm(hackHost);
+        }
 
-      // if no root access, nuke it
-      if ((!ns.hasRootAccess(hackHost))) {
+        if (ns.fileExists("SQLInject.exe", "home")) {
+          ns.sqlinject(hackHost);
+        }
+
         try {
           ns.nuke(hackHost);
         } catch {
@@ -49,19 +51,22 @@ export async function main(ns) {
       }
     }
 
+
     if (!ignoreServers.includes(hackHost)) {
       // kill all current scripts on neighbor
       ns.killall(hackHost)
-      
-      // set the max thread count
-      let threads = Math.floor(ns.getServerMaxRam(hackHost) / ns.getScriptRam("hack.js", "home"));
-      
+
       // initialize a list of the desired files
       let filesToCopy = ns.read("filesToCopy.txt").split(", ");
-      
-      // copy files to the neighbor
+
+      // copy files to the host
       ns.scp(filesToCopy, hackHost, "home");
-      
+
+      let scriptRam = ns.getScriptRam("hack.js", "home");
+
+      // set the max thread count
+      let threads = Math.floor(ns.getServerMaxRam(hackHost) / scriptRam);
+
       // tell the neighbor to hack the target with threads
       ns.exec("hack.js", hackHost, threads, target);
     }
