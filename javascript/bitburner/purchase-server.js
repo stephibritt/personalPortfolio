@@ -25,7 +25,7 @@ export async function main(ns) {
 
       ns.purchaseServer(hostname, ram);
 
-      ns.write("purchasedServers.txt", ", " + hostname, "a");
+      ns.write("ownedServers.txt", ", " + hostname, "a");
 
       let threads = Math.floor(ns.getServerMaxRam(hostname) / ns.getScriptRam("hack.js", "home"));
 
