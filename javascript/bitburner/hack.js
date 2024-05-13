@@ -17,32 +17,34 @@ export async function main(ns) {
     // have. If the target's security level is higher than this,
     // we'll weaken it before doing anything else
     const securityThresh = ns.getServerMinSecurityLevel(target);
-    
-    let isRootAccessable = ns.hasRootAccess(target);
 
+
+
+    // try to open all ports, if the .exe exists
+    if (ns.fileExists("BruteSSH.exe", "home")) {
+      ns.brutessh(target);
+    }
+
+    if (ns.fileExists("FTPCrack.exe", "home")) {
+      ns.ftpcrack(target);
+    }
+
+    if (ns.fileExists("relaySMTP.exe", "home")) {
+      ns.relaysmtp(target);
+    }
+
+    if (ns.fileExists("HTTPWorm.exe", "home")) {
+      ns.httpworm(target);
+    }
+
+    if (ns.fileExists("SQLInject.exe", "home")) {
+      ns.sqlinject(target);
+    }
+
+    let isRootAccessable = ns.hasRootAccess(target);
+    
     // if no root access, attempt to gain
     if (!(isRootAccessable)) {
-      // try to open all ports, if the .exe exists
-      if (ns.fileExists("BruteSSH.exe", "home")) {
-        ns.brutessh(target);
-      }
-
-      if (ns.fileExists("FTPCrack.exe", "home")) {
-        ns.ftpcrack(target);
-      }
-
-      if (ns.fileExists("relaySMTP.exe", "home")) {
-        ns.relaysmtp(target);
-      }
-
-      if (ns.fileExists("HTTPWorm.exe", "home")) {
-        ns.httpworm(target);
-      }
-
-      if (ns.fileExists("SQLInject.exe", "home")) {
-        ns.sqlinject(target);
-      }
-      
       try {
         ns.nuke(target);
       } catch {

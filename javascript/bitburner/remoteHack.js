@@ -9,6 +9,11 @@ export async function main(ns) {
   const purchasedServers = ns.read("ownedServers.txt").split(", ");
 
   // a list of all servers connected to the host
+
+  ns.exec("populateHackHosts.js", "home");
+
+  await ns.sleep(1000);
+
   const hackHosts = ns.read("hackHosts.txt").split(", ");
 
   for (let i = 0; i < hackHosts.length; i++) {
@@ -18,30 +23,32 @@ export async function main(ns) {
     // get root access to the hackHosts
     // if the server is not in the ignore list...
     if ((!ignoreServers.includes(hackHost)) && (!purchasedServers.includes(hackHost))) {
+
+      // try to open all ports, if the .exe exists
+      if (ns.fileExists("BruteSSH.exe", "home")) {
+        ns.brutessh(hackHost);
+      }
+
+      if (ns.fileExists("FTPCrack.exe", "home")) {
+        ns.ftpcrack(hackHost);
+      }
+
+      if (ns.fileExists("relaySMTP.exe", "home")) {
+        ns.relaysmtp(hackHost);
+      }
+
+      if (ns.fileExists("HTTPWorm.exe", "home")) {
+        ns.httpworm(hackHost);
+      }
+
+      if (ns.fileExists("SQLInject.exe", "home")) {
+        ns.sqlinject(hackHost);
+      }
+
       let isRootAccessable = ns.hasRootAccess(hackHost);
 
       // if no root access, attempt to gain
       if (!(isRootAccessable)) {
-        // try to open all ports, if the .exe exists
-        if (ns.fileExists("BruteSSH.exe", "home")) {
-          ns.brutessh(hackHost);
-        }
-
-        if (ns.fileExists("FTPCrack.exe", "home")) {
-          ns.ftpcrack(hackHost);
-        }
-
-        if (ns.fileExists("relaySMTP.exe", "home")) {
-          ns.relaysmtp(hackHost);
-        }
-
-        if (ns.fileExists("HTTPWorm.exe", "home")) {
-          ns.httpworm(hackHost);
-        }
-
-        if (ns.fileExists("SQLInject.exe", "home")) {
-          ns.sqlinject(hackHost);
-        }
 
         try {
           ns.nuke(hackHost);
@@ -54,13 +61,19 @@ export async function main(ns) {
 
     if (!ignoreServers.includes(hackHost)) {
       // kill all current scripts on neighbor
-      ns.killall(hackHost)
+      ns.killall(hackHost);
 
       // initialize a list of the desired files
       let filesToCopy = ns.read("filesToCopy.txt").split(", ");
 
       // copy files to the host
       ns.scp(filesToCopy, hackHost, "home");
+
+      ns.exec("populateHackHosts.js", hackHost);
+
+      await ns.sleep(1000);
+
+      ns.killall(hackHost);
 
       let scriptRam = ns.getScriptRam("hack.js", "home");
 
