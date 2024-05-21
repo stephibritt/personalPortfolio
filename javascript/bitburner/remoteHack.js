@@ -1,22 +1,14 @@
 /** @param {NS} ns */
 export async function main(ns) {
   // Defines the "target server", which is the server
-  // that we're going to hack.
+  // that we're going to hack using this script
+  const portNumber = 1;
+  const portWriteThreads = 1;
 
-  // a list of all servers connected to the host
-  var hackHosts = ns.read("hackHosts.txt").split(", ");
+  await ns.exec("determineHackTarget.js", "home", portWriteThreads, portNumber);
 
-  let promptChoices = hackHosts.toString();
-
-  let target;
-
-  //target = ns.prompt("Please choose a server to target from this list:",
-  //{ type: "select", choices: ["n00dles", "the-hub", "computek"]);
-
-  target = await ns.prompt("Please choose a server to target from this list:",
-    { type: "text"}
-  );
-
+  let target = ns.readPort(portNumber);
+  
   // a list of servers that we do not want to hack or open ports on
   const ignoreServers = ns.read("ignoreServers.txt").split(", ");
   const purchasedServers = ns.read("ownedServers.txt").split(", ");
@@ -24,6 +16,9 @@ export async function main(ns) {
   ns.exec("populateHackHosts.js", "home");
 
   await ns.sleep(500);
+
+  // a list of all servers connected to the host
+  var hackHosts = ns.read("hackHosts.txt").split(", ");
 
   for (let i = 0; i < hackHosts.length; i++) {
     // define which server to work on
