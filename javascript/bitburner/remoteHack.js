@@ -5,17 +5,21 @@ export async function main(ns) {
   const portNumber = 1;
   const portWriteThreads = 1;
 
-  await ns.exec("determineHackTarget.js", "home", portWriteThreads, portNumber);
+  ns.clearPort(portNumber)
 
-  let target = ns.readPort(portNumber);
+  ns.exec("determineHackTarget.js", "home", portWriteThreads, portNumber);
+
+  await ns.sleep(3)
   
+  let target = ns.readPort(portNumber);
+
   // a list of servers that we do not want to hack or open ports on
   const ignoreServers = ns.read("ignoreServers.txt").split(", ");
   const purchasedServers = ns.read("ownedServers.txt").split(", ");
 
   ns.exec("populateHackHosts.js", "home");
 
-  await ns.sleep(500);
+  await ns.sleep(3)
 
   // a list of all servers connected to the host
   var hackHosts = ns.read("hackHosts.txt").split(", ");
@@ -74,7 +78,7 @@ export async function main(ns) {
 
       ns.exec("populateHackHosts.js", hackHost);
 
-      await ns.sleep(500);
+      await ns.sleep(3)
 
       ns.killall(hackHost);
 

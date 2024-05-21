@@ -31,5 +31,6 @@ export async function main(ns) {
   }
   
   // send the hack target to a port
-  ns.tryWritePort(portNumber, hackTarget);
+  ns.clearPort(portNumber)
+  ns.writePort(portNumber, hackTarget);
 }
