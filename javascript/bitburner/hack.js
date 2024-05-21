@@ -2,7 +2,13 @@
 export async function main(ns) {
   // Defines the "target server", which is the server
   // that we're going to hack.
-  const target = ns.args[0];
+  let target = ns.args[0];
+  
+  if (target == undefined) {
+    target = await ns.prompt("Please choose a server to target from this list:",
+      { type: "text" }
+    );
+  }
 
   const ignoreServers = ns.read("ignoreServers.txt").split(", ");
   const purchasedServers = ns.read("ownedServers.txt").split(", ");
@@ -17,9 +23,7 @@ export async function main(ns) {
     // have. If the target's security level is higher than this,
     // we'll weaken it before doing anything else
     const securityThresh = ns.getServerMinSecurityLevel(target);
-
-
-
+    
     // try to open all ports, if the .exe exists
     if (ns.fileExists("BruteSSH.exe", "home")) {
       ns.brutessh(target);
@@ -42,7 +46,7 @@ export async function main(ns) {
     }
 
     let isRootAccessable = ns.hasRootAccess(target);
-    
+
     // if no root access, attempt to gain
     if (!(isRootAccessable)) {
       try {

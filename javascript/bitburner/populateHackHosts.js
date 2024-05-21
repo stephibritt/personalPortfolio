@@ -13,7 +13,7 @@ export async function main(ns) {
 
   // concatinate the list of known hacking hosts
   ignoreList = ignoreList.concat(ns.read("hackHosts.txt").split(", "));
-  
+
   // scan for connected servers
   let neighbors = ns.scan();
 
@@ -31,6 +31,17 @@ export async function main(ns) {
 
   // sort the list
   hackHosts.sort();
+
+  var tempList = [];
+
+  for (let i = 0; i < hackHosts.length; i++) {
+    let tempServ = hackHosts[i];
+    if (!tempList.includes(tempServ)) {
+      tempList.push(tempServ)
+    }
+  }
+  
+  hackHosts = tempList.sort()
 
   // overwrite the comma separated list in alphabetical order
   ns.write("hackHosts.txt", hackHosts.join(", "), "w");

@@ -2,19 +2,28 @@
 export async function main(ns) {
   // Defines the "target server", which is the server
   // that we're going to hack.
-  const target = ns.args[0];
+
+  // a list of all servers connected to the host
+  var hackHosts = ns.read("hackHosts.txt").split(", ");
+
+  let promptChoices = hackHosts.toString();
+
+  let target;
+
+  //target = ns.prompt("Please choose a server to target from this list:",
+  //{ type: "select", choices: ["n00dles", "the-hub", "computek"]);
+
+  target = await ns.prompt("Please choose a server to target from this list:",
+    { type: "text"}
+  );
 
   // a list of servers that we do not want to hack or open ports on
   const ignoreServers = ns.read("ignoreServers.txt").split(", ");
   const purchasedServers = ns.read("ownedServers.txt").split(", ");
 
-  // a list of all servers connected to the host
-
   ns.exec("populateHackHosts.js", "home");
 
-  await ns.sleep(1000);
-
-  const hackHosts = ns.read("hackHosts.txt").split(", ");
+  await ns.sleep(500);
 
   for (let i = 0; i < hackHosts.length; i++) {
     // define which server to work on
@@ -58,7 +67,6 @@ export async function main(ns) {
       }
     }
 
-
     if (!ignoreServers.includes(hackHost)) {
       // kill all current scripts on neighbor
       ns.killall(hackHost);
@@ -71,17 +79,20 @@ export async function main(ns) {
 
       ns.exec("populateHackHosts.js", hackHost);
 
-      await ns.sleep(1000);
+      await ns.sleep(500);
 
       ns.killall(hackHost);
 
+      let serverMaxRam = ns.getServerMaxRam(hackHost);
       let scriptRam = ns.getScriptRam("hack.js", "home");
 
       // set the max thread count
-      let threads = Math.floor(ns.getServerMaxRam(hackHost) / scriptRam);
+      let threads = Math.floor(serverMaxRam / scriptRam);
 
-      // tell the neighbor to hack the target with threads
-      ns.exec("hack.js", hackHost, threads, target);
+      if (threads >= 1) {
+        // tell the neighbor to hack the target with threads
+        ns.exec("hack.js", hackHost, threads, target);
+      }
     }
   }
 }
