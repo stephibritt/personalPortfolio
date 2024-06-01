@@ -25,7 +25,6 @@ export async function main(ns) {
     viable to hack and as close to the player level as possible. 
     Must have root access as well*/
 
-
     if ((serverHackLevel <= playerHackingLevel) && (serverHackLevel >= hackLevelSentinel) &&
       ns.hasRootAccess(potentialTarget)) {
       hackLevelSentinel = serverHackLevel;
@@ -33,6 +32,11 @@ export async function main(ns) {
     }
   }
 
+  //if hackTarget is undefined, default to n00dles
+  if (hackTarget == undefined) {
+    hackTarget = "n00dles";
+  }
+  
   // send the hack target to a port
   ns.clearPort(portNumber)
   ns.writePort(portNumber, hackTarget);

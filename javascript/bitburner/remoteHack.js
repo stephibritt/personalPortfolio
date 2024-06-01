@@ -2,27 +2,31 @@
 export async function main(ns) {
   // Defines the "target server", which is the server
   // that we're going to hack using this script
-  const portNumber = 1;
-  const portWriteThreads = 1;
+  let target = ns.args[0];
 
-  ns.clearPort(portNumber)
+  if (target == undefined) {
+    let portNumber = 1;
+    let portWriteThreads = 1;
 
-  ns.exec("determineHackTarget.js", "home", portWriteThreads, portNumber);
+    ns.clearPort(portNumber)
 
-  await ns.sleep(3)
+    ns.exec("determineHackTarget.js", "home", portWriteThreads, portNumber);
+
+    await ns.sleep(5)
+
+    target = ns.readPort(portNumber);
+  }
   
-  let target = ns.readPort(portNumber);
-
   // a list of servers that we do not want to hack or open ports on
   const ignoreServers = ns.read("ignoreServers.txt").split(", ");
   const purchasedServers = ns.read("ownedServers.txt").split(", ");
 
   ns.exec("populateHackHosts.js", "home");
 
-  await ns.sleep(3)
+  await ns.sleep(5)
 
   // a list of all servers connected to the host
-  var hackHosts = ns.read("hackHosts.txt").split(", ");
+  let hackHosts = ns.read("hackHosts.txt").split(", ");
 
   for (let i = 0; i < hackHosts.length; i++) {
     // define which server to work on
@@ -78,7 +82,7 @@ export async function main(ns) {
 
       ns.exec("populateHackHosts.js", hackHost);
 
-      await ns.sleep(3)
+      await ns.sleep(5)
 
       ns.killall(hackHost);
 
@@ -91,6 +95,8 @@ export async function main(ns) {
       if (threads >= 1) {
         // tell the neighbor to hack the target with threads
         ns.exec("hack.js", hackHost, threads, target);
+
+        
       }
     }
   }

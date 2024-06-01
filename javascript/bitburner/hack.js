@@ -63,12 +63,15 @@ export async function main(ns) {
         if (ns.getServerSecurityLevel(target) > securityThresh) {
           // If the server's security level is above our threshold, weaken it
           await ns.weaken(target);
+          await ns.sleep(450);
         } else if (ns.getServerMoneyAvailable(target) < moneyThresh) {
           // If the server's money is less than our threshold, grow it
           await ns.grow(target);
+          await ns.sleep(450);
         } else {
           // Otherwise, hack it
           await ns.hack(target);
+          await ns.sleep(450);
         }
       }
     }

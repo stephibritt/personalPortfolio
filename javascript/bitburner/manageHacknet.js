@@ -24,7 +24,7 @@ export async function main(ns) {
     let costOfRamUpgrade = 1000000000000;
     let costOfCoreUpgrade = 1000000000000;
     let nodeToUpgrade;
-    let partToUpgrade;
+    let upgradeCase;
     let timesToUpgrade = 1;
 
     for (let i = 0; i < numberOfNodes; i++) {
@@ -35,16 +35,14 @@ export async function main(ns) {
 
       let costs = [nodeRamUpgradeCost, nodeCoreUpgradeCost, nodeLevelUpgradeCost];
 
-      costs.sort(function (a, b) {
-        return a - b;
-      });
+      let leastExpensive = costs.reduce((a, b) => Math.min(a, b));
 
       if (nodeLevelUpgradeCost < costOfLevelUpgrade) {
         if (nodeLevelUpgradeCost != 0) {
           costOfLevelUpgrade = nodeLevelUpgradeCost;
           nodeToUpgrade = i;
-          if (nodeLevelUpgradeCost == costs[0]) {
-            partToUpgrade = "level";
+          if (leastExpensive == nodeLevelUpgradeCost) {
+            upgradeCase = "level";
           }
         }
       }
@@ -53,8 +51,8 @@ export async function main(ns) {
         if (nodeRamUpgradeCost != 0) {
           costOfRamUpgrade = nodeRamUpgradeCost;
           nodeToUpgrade = i;
-          if (nodeRamUpgradeCost == costs[0]) {
-            partToUpgrade = "ram";
+          if (leastExpensive == nodeRamUpgradeCost) {
+            upgradeCase = "ram";
           }
         }
       }
@@ -63,14 +61,24 @@ export async function main(ns) {
         if (nodeCoreUpgradeCost != 0) {
           costOfCoreUpgrade = nodeCoreUpgradeCost;
           nodeToUpgrade = i;
-          if (nodeCoreUpgradeCost == costs[0]) {
-            partToUpgrade = "cores";
+          if (leastExpensive == nodeCoreUpgradeCost) {
+            upgradeCase = "cores";
           }
         }
       }
-    }
 
-    switch (partToUpgrade) {
+      if (upgradeCase == undefined) {
+        if (numberOfNodes < MAXHACKNETNODES) {
+          upgradeCase = "purchase";
+        }
+      }
+
+      if (upgradeCase == undefined) {
+        upgradeCase = "exit";
+      }
+    }
+    
+    switch (upgradeCase) {
       case "level":
         let nodeLevelUpgradeCost = ns.hacknet.getLevelUpgradeCost(nodeToUpgrade, timesToUpgrade);
 
@@ -119,7 +127,19 @@ export async function main(ns) {
         }
 
         break;
+      case "purchase":
+        if (nodePurchaseCost <= playerMoney) {
+          if (numberOfNodes < MAXHACKNETNODES) {
+            ns.hacknet.purchaseNode();
+          }
+        }
+
+        break;
+      case "exit":
+        ns.print("All possible nodes purchased and upgraded.")
+        ns.exit();
     }
+
     await ns.sleep(3);
   }
 }
