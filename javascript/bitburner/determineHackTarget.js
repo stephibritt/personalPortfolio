@@ -6,38 +6,50 @@ export async function main(ns) {
     portNumber = 1;
   }
 
-  let hackTarget;
-  let hackLevelSentinel = 0;
+  let hackTargets = ns.read("hackHosts.txt").split(", ");
 
-  let playerHackingLevel = ns.getHackingLevel();
+  let playerHackLevel = ns.getHackingLevel();
 
-  var hackHosts = ns.read("hackHosts.txt").split(", ");
+  let targetsAndMoney = {};
 
-  for (let i = 0; i < hackHosts.length; i++) {
-    // define the potential server's stats
-    let potentialTarget = hackHosts[i];
-    let serverHackLevel = ns.getServerRequiredHackingLevel(potentialTarget);
+  for (let i = 0; i < hackTargets.length; i++) {
+    let currentTarget = hackTargets[i];
 
-    /* define the sentinel values to choose a server
-    the server will be chosen if the hack level is
-    lower than the players hack level and higher than the hack
-    level sentinel. This will ensure that the chosen target is 
-    viable to hack and as close to the player level as possible. 
-    Must have root access as well*/
+    let currentTargetHackLevel = ns.getServerRequiredHackingLevel(currentTarget);
 
-    if ((serverHackLevel <= playerHackingLevel) && (serverHackLevel >= hackLevelSentinel) &&
-      ns.hasRootAccess(potentialTarget)) {
-      hackLevelSentinel = serverHackLevel;
-      hackTarget = potentialTarget;
+    if (!(currentTargetHackLevel <= playerHackLevel)) {
+      continue;
     }
+
+    if (!(ns.hasRootAccess(currentTarget))) {
+      continue;
+    }
+
+    if (ns.getServerMaxMoney(currentTarget) == 0) {
+      continue;
+    }
+
+    targetsAndMoney[currentTarget] = ns.getServerMaxMoney(currentTarget);
   }
 
-  //if hackTarget is undefined, default to n00dles
-  if (hackTarget == undefined) {
-    hackTarget = "n00dles";
+  let targetsAndMoneySortable = Object.fromEntries(
+    Object.entries(targetsAndMoney).sort(([, a], [, b]) => b - a)
+  );
+
+  let targetsAndMoneyFinalSort = [];
+
+  for (let target in targetsAndMoneySortable) {
+    targetsAndMoneyFinalSort.push(target)
   }
-  
+
+  let mostLucrativeTarget = targetsAndMoneyFinalSort[0];
+
+  //if mostLucrativeTarget is undefined, default to n00dles
+  if (mostLucrativeTarget == undefined) {
+    mostLucrativeTarget = "n00dles";
+  }
+
   // send the hack target to a port
   ns.clearPort(portNumber)
-  ns.writePort(portNumber, hackTarget);
+  ns.writePort(portNumber, mostLucrativeTarget);
 }

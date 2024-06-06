@@ -6,13 +6,13 @@ export async function main(ns) {
 
   if (target == undefined) {
     let portNumber = 1;
-    let portWriteThreads = 1;
+    let determinHackThreads = 1;
 
     ns.clearPort(portNumber)
 
-    ns.exec("determineHackTarget.js", "home", portWriteThreads, portNumber);
+    ns.exec("determineHackTarget.js", "home", determinHackThreads, portNumber);
 
-    await ns.sleep(5)
+    await ns.sleep(200)
 
     target = ns.readPort(portNumber);
   }
@@ -23,7 +23,7 @@ export async function main(ns) {
 
   ns.exec("populateHackHosts.js", "home");
 
-  await ns.sleep(5)
+  await ns.sleep(50)
 
   // a list of all servers connected to the host
   let hackHosts = ns.read("hackHosts.txt").split(", ");
@@ -82,7 +82,7 @@ export async function main(ns) {
 
       ns.exec("populateHackHosts.js", hackHost);
 
-      await ns.sleep(5)
+      await ns.sleep(50)
 
       ns.killall(hackHost);
 

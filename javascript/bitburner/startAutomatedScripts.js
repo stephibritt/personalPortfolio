@@ -26,19 +26,19 @@ export async function main(ns) {
   let milleniumFitnessHackLevel = ns.getServerRequiredHackingLevel("millenium-fitness");
   let megacorpHackLevel = ns.getServerRequiredHackingLevel("megacorp");
 
-  if (playerHackLevel >= ironGymHackLevel) {
+  if (playerHackLevel >= ironGymHackLevel && ns.hasRootAccess("iron-gym")) {
     chosenHackTarget = "iron-gym";
   }
 
-  if (playerHackLevel >= theHubHackLevel) {
+  if (playerHackLevel >= theHubHackLevel && ns.hasRootAccess("the-hub")) {
     chosenHackTarget = "the-hub";
   }
 
-  if (playerHackLevel >= milleniumFitnessHackLevel) {
+  if (playerHackLevel >= milleniumFitnessHackLevel && ns.hasRootAccess("millenium-fitness")) {
     chosenHackTarget = "millenium-fitness";
   }
 
-  if (playerHackLevel >= megacorpHackLevel) {
+  if (playerHackLevel >= megacorpHackLevel && ns.hasRootAccess("megacorp")) {
     chosenHackTarget = "megacorp";
   }
 
@@ -47,7 +47,7 @@ export async function main(ns) {
   let hackRam = ns.getScriptRam("hack.js", "home");
   
   // set the max thread count
-  let percentThreadsToUse = .99;
+  let percentThreadsToUse = .70;
   let homeThreads = Math.floor((homeMaxRam / hackRam) * percentThreadsToUse);
 
   ns.exec("hack.js", "home", homeThreads, chosenHackTarget);

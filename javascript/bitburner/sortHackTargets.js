@@ -2,88 +2,85 @@
 export async function main(ns) {
   let sortMode = "Hacking Level";
 
-  //sortMode = await ns.prompt("Please choose how to sort the list of servers:", { type: "select", choices: ["Hacking Level", "Max Money"] });
+  sortMode = await ns.prompt("Please choose how to sort the list of servers:", { type: "select", choices: ["Hacking Level", "Max Money"] });
 
   ns.run("sanitizeHackHosts.js");
-  
+
+  await ns.sleep(50);
+
   if (sortMode == "Max Money") {
     let targetsSorted = await sortByMoney(ns);
-    ns.write("targetsSorted.txt", targetsSorted.toString().replaceAll(",", "\n"), "w");
+    ns.write("targetsSortedByMaxMoney.txt", targetsSorted.toString().replaceAll(",", "\n"), "w");
   } else {
     let targetsSorted = await sortByLevel(ns);
-    ns.write("targetsSorted.txt", targetsSorted.toString().replaceAll(",", "\n"), "w");
+    ns.write("targetsSortedByHackLevel.txt", targetsSorted.toString().replaceAll(",", "\n"), "w");
   }
 }
 
 async function sortByLevel(ns) {
   let hackTargets = ns.read("hackHosts.txt").split(", ");
-  let targetsAndLevel = [];
+  let targetsAndLevel = {};
 
   for (let i = 0; i < hackTargets.length; i++) {
     let currentTarget = hackTargets[i];
 
-    let currentTargetHackLevel = ns.getServerRequiredHackingLevel(currentTarget)
+    let targetToAdd = new HackTarget(currentTarget, ns);
 
-    let targetToAdd = { name: currentTarget, level: currentTargetHackLevel };
-
-    targetsAndLevel.push(targetToAdd)
+    targetsAndLevel[targetToAdd.name] = targetToAdd.requiredHackingLevel;
   }
 
-  let targetsAndLevelSorted = [];
-  let levelThreshold = 0;
-  while (levelThreshold < 3000) {
-    for (let i = 0; i < targetsAndLevel.length; i++) {
-      let currentTarget = targetsAndLevel[i];
-      let targetInfo = `Server Name: ${currentTarget.name}`.padding(35) + `Min. Hack Level: ${currentTarget.level}`;
+  let targetsAndLevelSortable = Object.fromEntries(
+    Object.entries(targetsAndLevel).sort(([, a], [, b]) => a - b)
+  );
 
-      if (targetsAndLevelSorted.includes(targetInfo)) {
-        continue;
-      }
+  let targetsFinalLevelSort = [];
 
-      if (currentTarget.level <= levelThreshold) {
-        targetsAndLevelSorted.push(targetInfo);
-      }
-    }
-    levelThreshold++;
+  for (let target in targetsAndLevelSortable) {
+    targetsFinalLevelSort.push(new HackTarget(target, ns).toString())
   }
 
-  return targetsAndLevelSorted;
+  return targetsFinalLevelSort;
 }
 
 async function sortByMoney(ns) {
   let hackTargets = ns.read("hackHosts.txt").split(", ");
-  let targetsAndMoney = [];
+  let targetsAndMoney = {};
 
   for (let i = 0; i < hackTargets.length; i++) {
     let currentTarget = hackTargets[i];
 
-    let currentTargetMaxMoney = ns.getServerMaxMoney(currentTarget);
+    let targetToAdd = new HackTarget(currentTarget, ns);
 
-    let targetToAdd = { name: currentTarget, maxMoney: currentTargetMaxMoney };
-
-    targetsAndMoney.push(targetToAdd)
+    targetsAndMoney[targetToAdd.name] = targetToAdd.maximumMoney;
   }
 
-  let targetsAndMoneySorted = [];
-  let moneyThreshold = 1;
-  //100000000000000
-  while (moneyThreshold < 1000000000000) {
-    for (let i = 0; i < targetsAndMoney.length; i++) {
-      let currentTarget = targetsAndMoney[i];
-      let targetInfo = `Server Name: ${currentTarget.name}`.padding(35) + `Max Money: ${currentTarget.maxMoney}`;
+  let targetsAndMoneySortable = Object.fromEntries(
+    Object.entries(targetsAndMoney).sort(([, a], [, b]) => a - b)
+  );
 
-      if (targetsAndMoneySorted.includes(targetInfo)) {
-        continue;
-      }
+  let targetsFinalMoneySort = [];
 
-      if (currentTarget.maxMoney <= moneyThreshold) {
-        targetsAndMoneySorted.push(targetInfo);
-      }
-    }
-    moneyThreshold *= 10;
+  for (let target in targetsAndMoneySortable) {
+    targetsFinalMoneySort.push(new HackTarget(target, ns).toString())
   }
 
-  return targetsAndMoneySorted;
+  return targetsFinalMoneySort;
+}
+
+function HackTarget(serverName, ns) {
+  this.name = serverName;
+  this.requiredHackingLevel = ns.getServerRequiredHackingLevel(serverName);
+  this.maximumMoney = ns.getServerMaxMoney(serverName);
+
+  this.writeToFile = function (fileName = "targetsSorted.txt") {
+    this.fileName = fileName;
+
+    ns.write(fileName, this.toString(), "a")
+  }
+
+  this.toString = function () {
+    return `Server Name: ${this.name}`.padding(38) + `Hack Level: ${this.requiredHackingLevel}`.padding(25) + `Max Money: ${this.maximumMoney}`;
+  };
 }
 
 /**
