@@ -16,7 +16,7 @@ class ImageViewer:
         # create the main window
         self.mainWindow = tkinter.Tk()
         # iconPath = os.curdir + "image_viewer.ico"
-        # self.mainWindow.iconbitmap(default=iconPath)
+        self.mainWindow.iconbitmap("image_viewer.ico")
         self.mainWindow.title("Image Viewer")
         self.mainWindow.attributes("-topmost", True)
 
@@ -55,7 +55,7 @@ class ImageViewer:
     # end func
     
     def chooseImage(self):
-        screenshotDirectory = os.curdir
+        screenshotDirectory = "~/Pictures/Screenshots"
         # screenshotDirectory = "C:\\Users\\RTS Tech\\Pictures\\Screenshots"
 
         file_path = filedialog.askopenfilename(title="Image To Show", initialdir=screenshotDirectory)
