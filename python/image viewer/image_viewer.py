@@ -1,7 +1,3 @@
-#!/c/Users/steph/AppData/Local/Programs/Python/Python311/pythonw.exe
-#!/c/Users/steph/AppData/Local/Programs/Python/Python311/python.exe
-# the location of the python.exe
-
 import tkinter
 from tkinter import filedialog
 import os
@@ -15,7 +11,6 @@ class ImageViewer:
     def __init__(self) -> None:
         # create the main window
         self.mainWindow = tkinter.Tk()
-        # iconPath = os.curdir + "image_viewer.ico"
         self.mainWindow.iconbitmap("image_viewer.ico")
         self.mainWindow.title("Image Viewer")
         self.mainWindow.attributes("-topmost", True)
@@ -32,10 +27,7 @@ class ImageViewer:
 
         self.onTopBtn.pack(side="left")
         self.chooseImgBtn.pack(side="left")
-
-        # file_path = "C:\\Users\\steph\\OneDrive\\Pictures\\Screenshots\\Screenshot 2025-05-26 222148.png"
-
-        # img = ImageTk.PhotoImage(Image.open(file_path))
+        
         img = self.chooseImage()
         self.imageArea = tkinter.Label(self.imageFrame, image=img)
         self.imageArea.pack()
@@ -56,8 +48,7 @@ class ImageViewer:
     
     def chooseImage(self):
         screenshotDirectory = "~/Pictures/Screenshots"
-        # screenshotDirectory = "C:\\Users\\RTS Tech\\Pictures\\Screenshots"
-
+        
         file_path = filedialog.askopenfilename(title="Image To Show", initialdir=screenshotDirectory)
         
         if os.path.isdir(file_path) or len(file_path)==0:
