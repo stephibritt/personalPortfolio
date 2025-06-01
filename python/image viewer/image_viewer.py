@@ -23,11 +23,26 @@ class ImageViewer:
         self.onTopChecked = tkinter.BooleanVar()
         self.onTopChecked.set(True)
         self.onTopBtn = tkinter.Checkbutton(self.buttonsFrame, text="Always On Top", command=self.toggleOnTop, variable=self.onTopChecked)
-        self.chooseImgBtn = tkinter.Button(self.buttonsFrame, text="Choose Image")
+        self.chooseImgBtn = tkinter.Button(self.buttonsFrame, text="Choose Image", command=self.changeImage)
 
         self.onTopBtn.pack(side="left")
         self.chooseImgBtn.pack(side="left")
         
+        img = self.chooseImage()
+        self.imageArea = tkinter.Label(self.imageFrame, image=img)
+        self.imageArea.pack()
+
+        self.buttonsFrame.pack()
+        self.imageFrame.pack()
+
+        tkinter.mainloop()
+    # end func
+
+    def changeImage(self):
+        # forget the previous image
+        self.imageArea.pack_forget()
+
+        # select a new image and repack the frame
         img = self.chooseImage()
         self.imageArea = tkinter.Label(self.imageFrame, image=img)
         self.imageArea.pack()
@@ -47,6 +62,7 @@ class ImageViewer:
     # end func
     
     def chooseImage(self):
+        # python supports the relative path using ~ to denote the current user's home folder
         screenshotDirectory = "~/Pictures/Screenshots"
         
         file_path = filedialog.askopenfilename(title="Image To Show", initialdir=screenshotDirectory)
