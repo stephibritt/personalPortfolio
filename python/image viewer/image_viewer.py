@@ -28,7 +28,7 @@ class ImageViewer:
         self.onTopBtn.pack(side="left")
         self.chooseImgBtn.pack(side="left")
         
-        img = self.chooseImage()
+        img = self.getImage()
         self.imageArea = tkinter.Label(self.imageFrame, image=img)
         self.imageArea.pack()
 
@@ -43,7 +43,7 @@ class ImageViewer:
         self.imageArea.pack_forget()
 
         # select a new image and repack the frame
-        img = self.chooseImage()
+        img = self.getImage()
         self.imageArea = tkinter.Label(self.imageFrame, image=img)
         self.imageArea.pack()
 
@@ -61,7 +61,7 @@ class ImageViewer:
         # end if
     # end func
     
-    def chooseImage(self):
+    def getImage(self):
         # python supports the relative path using ~ to denote the current user's home folder
         screenshotDirectory = "~/Pictures/Screenshots"
         
