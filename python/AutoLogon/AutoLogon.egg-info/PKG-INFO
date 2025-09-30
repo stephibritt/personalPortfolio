@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: AutoLogon
+Version: 0.1.0
+Summary: This is a simple app for enabling and disabling auto logon on Windows.
+Author: Test One, Test Two
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: requests

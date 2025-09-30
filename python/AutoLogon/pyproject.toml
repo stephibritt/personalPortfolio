@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "AutoLogon"
+dynamic = ["version"]
+description = "This is a simple app for enabling and disabling auto logon on Windows."
+authors = [{ name = "Test One" }, { name = "Test Two" }]
+readme = "README.md"
+requires-python = ">=3.11"
+
+dependencies = [
+    "requests",
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "AutoLogon.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["AutoLogon*"]
+
+[tool.setuptools.package-data]
+AutoLogon = ["resources/*"]
+
+[project.scripts]
+AutoLogon = "main:main"
