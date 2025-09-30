@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ImV"
+dynamic = ["version"]
+description = "This is a simple app for viewing images on top of other windows."
+authors = [{ name = "Test One" }, { name = "Test Two" }]
+readme = "README.md"
+requires-python = ">=3.11"
+
+dependencies = [
+    "Pillow",
+    "requests",
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "ImV.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ImV*"]
+
+[tool.setuptools.package-data]
+ImV = ["resources/*"]
+
+[project.scripts]
+ImV = "main:main"

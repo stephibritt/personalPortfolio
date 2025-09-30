@@ -4,8 +4,11 @@ import os
 import PIL
 from PIL import Image, ImageTk, ImageGrab
 import sys
+import getpass
+from ImV import __app_name__, __version__
+from importlib import resources
 
-def Main():
+def main():
     ImageViewer()
 # end main
 
@@ -13,23 +16,35 @@ class ImageViewer:
     def __init__(self) -> None:
         # create the main window
         self.main_window = tkinter.Tk()
+        # __version__ = "0.1.0"
 
         # this is in a try statement in case the .ico file cannot be found
         try:
-            image_viewer_ico = "C:\\Users\\RTS Tech\\Desktop\\Notes\\Scripts and Programs\\Josh's Stuff\\image_viewer.ico"
-            self.main_window.iconbitmap(image_viewer_ico)
+            with resources.path("ImV.resources", "image_viewer.ico") as icon_path:
+                self.main_window.iconbitmap(icon_path)
+            # end with
         except:
             # do nothing and simply do not use the icon
             pass
         # end try
         
-        self.main_window.title("ImV")
+        self.main_window.title(f"{__app_name__} v0.1.1")
         self.main_window.attributes("-topmost", True)
 
         # this is the minimum size that will show the buttons correctly
         self.min_width = 317
         self.min_height = 26
         self.main_window.minsize(self.min_width, self.min_height)
+
+        current_user = getpass.getuser()
+
+        app_data_path = f"C:\\Users\\{current_user}\\AppData\\Local\\Programs\\ImV\\"
+
+        if not os.path.isdir(app_data_path):
+            os.mkdir(app_data_path)
+        # end if
+
+        self.settings_file = app_data_path + "settings.ini"
 
         # Menu to open an image
         menubar = tkinter.Menu(self.main_window)
@@ -49,6 +64,20 @@ class ImageViewer:
         self.borderless_checked = tkinter.BooleanVar(value=False)
         self.tool_win_checked = tkinter.BooleanVar(value=False)
 
+        # startup settings
+        try:
+            self.prompt_at_start = self.get_startup_settings()
+
+            if type(self.prompt_at_start) != bool:
+                self.prompt_at_start = False
+            # end if
+        except:
+            # if anything unexpected happens, set it to false
+            self.prompt_at_start = False
+        # end try
+
+        self.start_prompt_checked = tkinter.BooleanVar(value=self.prompt_at_start)
+
         settings_menu = tkinter.Menu(menubar, tearoff=0)
         settings_menu.add_command(label="Reset Defaults", command=self.reset_defaults)
         settings_menu.add_separator()
@@ -56,9 +85,12 @@ class ImageViewer:
         settings_menu.add_checkbutton(label="Borderless", command=self.toggle_borderless, variable=self.borderless_checked)
         settings_menu.add_checkbutton(label="Resizable", command=self.toggle_resizable, variable=self.resizable_checked)
         settings_menu.add_checkbutton(label="Tool Window Mode", command=self.toggle_tool_window, variable=self.tool_win_checked)
+        settings_menu.add_separator()
+        settings_menu.add_checkbutton(label="Prompt for Image at Start", command=self.set_startup_settings, variable=self.start_prompt_checked)
 
         about_menu = tkinter.Menu(menubar, tearoff=0)
         about_menu.add_command(label="About the developers", command=self.show_dev_info)
+        about_menu.add_command(label="Tips and Tricks", command=self.show_tips)
 
         menubar.add_cascade(label="File", menu=file_menu)
         menubar.add_cascade(label="Settings", menu=settings_menu)
@@ -81,9 +113,44 @@ class ImageViewer:
         self.buttons_frame.pack()
 
         self.main_window.update_idletasks()
+        self.main_window.geometry("+25+25")
         
         # populate the image area
-        self.set_image(False)
+        self.set_image(self.prompt_at_start)
+    # end func
+
+    def get_startup_settings(self):
+        try:
+            with open(self.settings_file, 'r', encoding='utf-8') as infile:
+                return infile.readline().strip() == "True"
+            # end with
+        except FileNotFoundError:
+            return False  # default if file is missing
+        # end try
+    # end func
+
+    def set_startup_settings(self):
+        # default value if file doesn't exist or is empty
+        prompt_setting = "False"
+
+        try:
+            with open(self.settings_file, 'r', encoding='utf-8') as infile:
+                prompt_setting = infile.readline().strip() or "False"
+            # end with
+        except FileNotFoundError:
+            pass  # use default
+        # end try
+
+        # toggle value
+        new_value = "False" if prompt_setting == "True" else "True"
+
+        # update tkinter variable
+        self.start_prompt_checked.set(new_value == "True")
+
+        # write back to file
+        with open(self.settings_file, 'w', encoding='utf-8') as outfile:
+            outfile.write(new_value)
+        # end with
     # end func
 
     def open_image(self):
@@ -285,15 +352,33 @@ class ImageViewer:
         tkinter.mainloop()
     # end func
 
+    def show_tips(self):
+        
+        tips_msg = (
+            "There are more settings than the three quick access buttons, so explore the menus!\n\n"
+            "• Stretching the image: Use the drag handles on the edge of the window to set the desired size, "
+            "then simply press the quick access 'Stretch Image to Frame' button."
+        )
+
+        messagebox.showinfo("Tips and Tricks", tips_msg)
+    # end func
+
     def show_dev_info(self):
-        lorem_ipsum = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-        dev_info_msg = f"This was created as a neat tool to view images on top of other programs which take focus or block off the screen by \n..." \
-        f"\n\nIt was later added on to by \n...\n{lorem_ipsum}"
+        first_dev = "Dev0"
+        second_dev = "Dev1"
+
+        dev_info_msg = (
+            f"{first_dev} created this as a neat tool to view images on top of other programs that take focus "
+            f"or block off the screen. Originally, you could only select one image at startup and had to close it to change the image. "
+            f"\n\n{second_dev} later added the other functionality, such as the menus, resizing options, and the ability to change images."
+        )
+
         messagebox.showinfo("Dev Info", dev_info_msg)
     # end func
 # end class
+
             
 # DO NOT MODIFY CODE BELOW THIS LINE
 if __name__ == "__main__":
-    Main()
+    main()
 # end if
