@@ -8,9 +8,6 @@ class MainView(tk.Tk):
         self.title(f"{app_name} v{version}")
         self.resizable(False, False)
 
-        # self.group_label = tk.Label(self, text="Enter Logon Info", anchor='w')
-        # self.group_label.pack(anchor='w')
-
         self.groupbox_frame = tk.Frame(self)
         self.groupbox_frame.pack(padx=8, anchor='w')
 

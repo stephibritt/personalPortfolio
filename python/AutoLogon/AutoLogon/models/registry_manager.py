@@ -3,7 +3,7 @@ import winreg
 class RegistryManager:
     AUTOLOGON_VALUES = [
         "AutoAdminLogon",
-        "DefaultUserName",
+        "DefaultUsername",
         "DefaultPassword",
         "DefaultDomainName"
     ]
@@ -21,7 +21,7 @@ class RegistryManager:
     def get_autologon_settings(self):
         settings = {}
         with self._open_key() as key:
-            for name in ["AutoAdminLogon", "DefaultUserName", "DefaultDomainName"]:
+            for name in ["AutoAdminLogon", "DefaultUsername", "DefaultDomainName"]:
                 try:
                     settings[name], _ = winreg.QueryValueEx(key, name)
                 except FileNotFoundError:
@@ -36,7 +36,7 @@ class RegistryManager:
     def enable_autologon(self, username, password, domain=None):
         with self._open_key(winreg.KEY_SET_VALUE) as key:
             winreg.SetValueEx(key, "AutoAdminLogon", 0, winreg.REG_SZ, "1")
-            winreg.SetValueEx(key, "DefaultUserName", 0, winreg.REG_SZ, username)
+            winreg.SetValueEx(key, "DefaultUsername", 0, winreg.REG_SZ, username)
             winreg.SetValueEx(key, "DefaultPassword", 0, winreg.REG_SZ, password)
             if domain:
                 winreg.SetValueEx(key, "DefaultDomainName", 0, winreg.REG_SZ, domain)
@@ -47,6 +47,7 @@ class RegistryManager:
     def disable_autologon(self):
         with self._open_key(winreg.KEY_SET_VALUE) as key:
             winreg.SetValueEx(key, "AutoAdminLogon", 0, winreg.REG_SZ, "0")
+            # you can either delete all autologon values or just the default password
             for val in self.AUTOLOGON_VALUES:
                 try:
                     winreg.DeleteValue(key, val)
