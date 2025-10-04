@@ -1,5 +1,5 @@
 # Package metadata
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 __app_name__ = "ImV"
 # __authors__ = ["Test One", "Test Two"]
 # __license__ = None

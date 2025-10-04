@@ -1,7 +1,6 @@
 # EXTERNAL IMPORTS
 from tkinter import messagebox
 from PIL import ImageTk
-import os
 import sys
 from pathlib import Path
 
@@ -60,7 +59,6 @@ class MainController:
 
         start_dir = saved_start_dir if saved_start_dir.is_dir() else default_dir
 
-
         user_image = self.model.get_image(start_dir)
 
         image_for_display = ImageTk.PhotoImage(user_image) if user_image else None
@@ -86,8 +84,9 @@ class MainController:
         win_width = self.view.winfo_width()
         win_height = self.view.winfo_height()
         min_win_height = self.view.min_height
+        image_border = self.view.image_border
 
-        resized_image = self.model.resize_image(win_width, win_height, min_win_height)
+        resized_image = self.model.resize_image(win_width, win_height, min_win_height, image_border)
         
         image_for_display = ImageTk.PhotoImage(resized_image) if resized_image else None
         

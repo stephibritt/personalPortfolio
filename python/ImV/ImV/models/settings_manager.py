@@ -1,5 +1,5 @@
 import configparser
-import sys
+import sys, os, stat
 from pathlib import Path
 
 class SettingsManager:
@@ -45,8 +45,14 @@ class SettingsManager:
             file_mtime = self.config_file.stat().st_mtime
 
             if force or self._last_mtime != file_mtime:
-                self.config.read(self.config_file, encoding="utf-8")
-                self._last_mtime = file_mtime
+                try:
+                    self.config.read(self.config_file, encoding="utf-8")
+                    self._last_mtime = file_mtime
+                except:
+                    # the file could not be read for some reason, save the defaults
+                    self._set_defaults()
+                    self.save_settings()
+                # end try
             # end if
         else:
             self._set_defaults()
@@ -62,6 +68,7 @@ class SettingsManager:
 
     def get(self, section, option, fallback=None):
         self._read_config()
+        
         return self.config.get(section, option, fallback=fallback)
     # end func
 
@@ -84,8 +91,32 @@ class SettingsManager:
     # end func
 
     def save_settings(self):
-        with open(self.config_file, "w", encoding="utf-8") as outfile:
-            self.config.write(outfile)
-        # end with
+        try:
+            orig_mode = None
+
+            if self.config_file.exists():
+                # save original permissions
+                orig_mode = self.config_file.stat().st_mode
+    
+                # make file writable for the user if it isn’t
+                if not os.access(self.config_file, os.W_OK):
+                    self.config_file.chmod(stat.S_IWUSR | stat.S_IRUSR)
+                # end if
+            # end if
+    
+            # write the settings
+            with open(self.config_file, "w", encoding="utf-8") as outfile:
+                self.config.write(outfile)
+            # end with
+    
+            # restore original permissions if we modified them
+            if orig_mode is not None:
+                self.config_file.chmod(orig_mode)
+            # end if
+        except PermissionError as ex:
+            print(f"Permission denied: cannot save settings to {self.config_file}")    
+        except Exception as ex:
+            print(f"Failed to save settings: {ex}")
+        # end try
     # end func
 # end class

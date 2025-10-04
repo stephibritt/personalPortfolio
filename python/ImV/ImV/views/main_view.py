@@ -22,7 +22,7 @@ class MainView(tk.Tk):
         self.min_width = 317
         self.min_height = 26
         self.minsize(self.min_width, self.min_height)
-        
+
         # MENUBAR
         self.menubar = tk.Menu(self)
 
@@ -94,6 +94,8 @@ class MainView(tk.Tk):
 
         self.image_area = tk.Label(self.image_frame)
         self.image_area.pack()
+
+        self.image_border = 4 # this will be used by the controller to ensure size alterations are correct
 
         # START POSITION
         self.update_idletasks()

@@ -9,28 +9,29 @@ class ImageManager:
     # end init
 
     def get_image(self, start_dir):
-        self.image_path = filedialog.askopenfilename(
+        image_path = filedialog.askopenfilename(
             title="Image To Show",
             initialdir=start_dir
         )
 
         try:
-            if not self.image_path or os.path.isdir(self.image_path):
+            if not image_path or os.path.isdir(image_path):
                 # Grab image from clipboard
                 img = ImageGrab.grabclipboard()
             else:
                 # Load image from file
-                img = Image.open(self.image_path)
+                img = Image.open(image_path)
             # end if
+
+            self.current_image = img
 
             if img is None:
                 return None
             # end if
 
-            self.current_image = img
-
             return img
-        except (KeyError, AttributeError, ValueError, PermissionError, UnidentifiedImageError):
+        except (KeyError, AttributeError, ValueError, PermissionError, UnidentifiedImageError) as ex:
+            print(ex)
             return None
         # end try
     # end func
@@ -47,13 +48,14 @@ class ImageManager:
         return self.current_image
     # end func
 
-    def resize_image(self, win_width, win_height, min_win_height):
+    def resize_image(self, win_width, win_height, min_win_height, image_border):
         if self.current_image is None:
             return None
         # end if
 
-        resize_width = win_width - 4
-        resize_height = win_height - min_win_height - 4
+        # without the image border width and height, this will alter the image size if the window is not resized
+        resize_width = win_width - image_border
+        resize_height = win_height - min_win_height - image_border
 
         return self.current_image.resize((resize_width, resize_height), Image.LANCZOS)
     # end func
